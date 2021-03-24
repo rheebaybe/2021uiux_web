@@ -163,24 +163,6 @@ body{
 }
 
 
-/*common*/
-.mb5{
-    margin-bottom:5px !important;
-}
-.mb10{
-    margin-bottom:10px !important;
-}
-.mb15{
-    margin-bottom:15px !important;
-}
-.mb20{
-    margin-bottom:20px !important;
-}
-.mb30{
-    margin-bottom:30px !important;
-}
-
-
 
 
 
@@ -350,3 +332,90 @@ footer{
     font-size: 14px;
     color: #4b8ce0;
 }
+
+/*footer*/
+
+#footer{
+    background: #eee;
+    
+}
+
+.footerTopWrap{
+    background: #ccc;
+}
+
+.footerTop{
+    width: 980px;
+    margin: 0 auto;
+    
+}
+.footerTop ul{
+    _background: red;
+    float: left;
+    overflow: hidden;
+}
+.footerTop li{
+    float: left;
+    position: relative;
+}
+.footerTop li a{
+    display: block;
+    padding: 0 20px;
+    line-height: 40px; 
+}
+.footerTop li:first-child a{
+    padding-left: 0;
+}
+
+.footerTop li:after{
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 10px;
+    background: #000;
+    right: -1px;
+    top: 20px;
+}
+
+.footerBottom{
+    width: 980px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+
+
+.footerBottom h3{
+    float: left;
+    padding-left: 10px;
+}
+
+.footerBottom .copy{
+    float: left;
+    padding-left: 10px;
+}
+
+
+
+
+
+
+
+/*common*/
+.mb5{
+    margin-bottom:5px !important;
+}
+.mb10{
+    margin-bottom:10px !important;
+}
+.mb15{
+    margin-bottom:15px !important;
+}
+.mb20{
+    margin-bottom:20px !important;
+}
+.mb30{
+    margin-bottom:30px !important;
+}
+
+
