@@ -82,6 +82,10 @@
         #section1st li{
             float:left;
             width:calc((1000px - 60px) / 4);
+            height: 235px;
+            position: relative;
+            overflow: hidden;/*자식요소가 넘쳤으니까 부모요소가 숨겨줌*/
+            border-radius: 50%;/*동그라미*/
         }
         #section1st li + li{
             margin-left: 20px;
@@ -109,29 +113,34 @@
         #section1st p{
             margin-bottom: 20px;
         }
-        
-        #section2st li{
-            float:left;
-            width:calc((1000px - 60px) / 4);
-        }
-        #section2st li + li{
-            margin-left: 20px;
-        } /*자기 자신을 제외한 마진레프트 주기*/
-        
-        #section2st h2, 
-        #section2st p{
+        #section1st .overlay{
+            /*background: skyblue; 블럭단위고 부모자가 있으니까 사진크기만큼 할당된다*/
+            background: rgba(255,255,255,0.5);/*글자색은 살릴수 있다*/
+            height: 100%; /*li의 크기 높이값을 알아야한다 li에 높이값을 줘야한다 */
+            width: 100%;/*li에 position: relative; 넣어줘야한다*/
+            position: absolute;/*포지션을 넣으려면 width값이 있어야한다*/
+            /*top:0;기존 파리 사진을 덮어버리게 된다*/
+            /*top:100%;overlay를 위로 올라오게 하기위해서 적용->올라오는 스타트지점*/
+            /*opacity: 1;글자도 같이 opacity가 적용된다*/
+            transition:0.3s;
+            /*text-align: center;
+            line-height: 235px;*/
+            display:flex;/*자식요소정렬할때쓴다*/
+            justify-content: center;/*left와 right중간*/
+            align-items: center;
             text-align: center;
+            
+            
+            top:-100%;/*스타트지점*/
+            left:0;/*스타트지점*/
+            
+            
+            
         }
-        #section2st h2:after{
-            content: "";
-            display: block;
-            width: 100px;
-            height: 1px;
-            background: #000;
-            margin: 10px auto;
-        }
-        #section2st p{
-            margin-bottom: 20px;
+        #section1st li:hover .overlay{
+            /*opacity: 1;*/
+            top:0;/*overlay를 위로 올라오게 하기위해서 적용, 도착지점을 의미*/
+            left:0;/*도착지점을 의미한다*/
         }
         .mb30{
             margin-bottom: 30px !important;
@@ -146,6 +155,7 @@
             background: #eee;
             
         }
+        
     </style>
 </head>
 <body>
@@ -184,38 +194,24 @@
             <ul class="clearfix">
                 <li>
                     <img src="../images/testimg.jpg" alt="">
+                    <div class="overlay">TOP<br>test</div>
                 </li>
                 <li>
                     <img src="../images/testimg.jpg" alt="">
+                    <div class="overlay">TOP</div>
                 </li>
                 <li>
                     <img src="../images/testimg.jpg" alt="">
+                    <div class="overlay">TOP</div>
                 </li>
                 <li>
                     <img src="../images/testimg.jpg" alt="">
+                    <div class="overlay">TOP</div>
                 </li>
+                
             </ul>
         </section>
     </div>
     
-    
-    <section class="container" id="section2st">
-       <h2>GALLERY1</h2>
-       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, earum.</p>
-        <ul class="clearfix">
-            <li>
-                <img src="../images/testimg.jpg" alt="">
-            </li>
-            <li>
-                <img src="../images/testimg.jpg" alt="">
-            </li>
-            <li>
-                <img src="../images/testimg.jpg" alt="">
-            </li>
-            <li>
-                <img src="../images/testimg.jpg" alt="">
-            </li>
-        </ul>
-    </section>
 </body>
 </html>

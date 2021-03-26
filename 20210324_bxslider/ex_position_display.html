@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/jquery.bxslider.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <script src="js/jquery-3.1.1.min.js"></script><!--순서를 지켜야한다-->
+    <script src="js/jquery.bxslider.js"></script><!--순서를 지켜야한다-->
+    <script>/*순서를 지켜야한다*/
+    $(document).ready(function(){
+           var mySlider = $('.slider').bxSlider({
+              auto:true              
+           });   
+        $('.nB').click(function(){
+               mySlider.goToNextSlide();
+            });
+            $('.pB').click(function(){
+               mySlider.goToPrevSlide();
+            });
+        });
+    </script>
+    <style>
+        #header{
+            background: pink;
+        }
+        .container{
+            width: 1000px;
+            margin: 0 auto;
+            position:relative;
+        }
+        .container li{
+            float:left;
+            width:calc(1000px / 4);
+        }
+        .container li:hover a{
+            background: skyblue;
+            color:azure;
+        }
+        
+        .bx-wrapper .bx-pager {
+    
+    bottom: 30px;
+  
+}
+        .nB,.pB{
+            position: absolute;
+            top:50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            }
+            .nB{                
+                right: 0;                
+            }
+            .pB{                
+                left:0;                
+            }
+        .bx-wrapper .bx-prev {
+    display:none;
+    
+}
+        
+        .pink{
+            background: pink;
+        }
+    </style>
+</head>    
+<body>
+<header id="header">
+    <div class="container">
+        <ul class="clearfix">
+            <li><a href="#">menu1</a></li>
+            <li><a href="#">menu2</a></li>
+            <li><a href="#">menu3</a></li>
+            <li><a href="#">menu4</a></li>
+        </ul>
+    </div>
+</header>
+<div class="container">
+    <ul class="slider">
+        <li><img src="images/pc01.jpg" alt=""></li>
+        <li><img src="images/pc02.jpg" alt=""></li>
+        <li><img src="images/pc03.jpg" alt=""></li>
+    </ul>
+    <div class="nB">
+        <img src="images/next.png" alt="">
+    </div>
+    <div class="pB">
+        <img src="images/prev.png" alt="">
+    </div>
+</div>
+<div class="pink">
+    <div class="container">
+        <ul>
+            <li><img src="../images/testimg.jpg" alt=""></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

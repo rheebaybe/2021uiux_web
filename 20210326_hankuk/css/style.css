@@ -1,0 +1,135 @@
+@charset "utf-8";
+
+
+/*헤더*/
+
+
+.container {
+    background: #0044af;
+    width: 100%;
+}
+
+.gnb {
+    width: 1200px;
+    margin: 0 auto;
+    height: 40px;
+}
+
+.left_gnb {
+    width: 365px;
+
+}
+
+.left_gnb li {
+    cursor: pointer;
+    float: left;
+    background: #00163b;
+    padding: 9px 37px;
+    margin-left: 1px;
+}
+
+.left_gnb li:first-child {
+    background: #fff;
+    margin-left: 0;
+}
+
+.left_gnb li a {
+    color: #a5a5a5;
+    font-size: 10pt;
+}
+
+
+.right_rnb {
+    width: 400px;
+    float: right;
+
+
+}
+
+.right_rnb li {
+    float: left;
+    margin-right: 9px;
+    padding: 10px;
+}
+
+.right_rnb li a {
+    color: #fff;
+    font-size: 10pt;
+
+}
+
+.lnb {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 15px 0;
+}
+
+.lnb img {
+    float: left;
+
+}
+
+.wrap {
+    float: right;
+
+}
+
+
+.right_lnb {
+    float: left;
+    width: 600px;
+
+}
+
+.right_lnb li {
+    float: left;
+    width: calc(600px / 5);
+
+}
+
+.right_lnb li a {
+    line-height: 45px;
+}
+
+.nav_icon {
+    float: left;
+    width: 90px;
+}
+
+.nav_icon li {
+    float: left;
+
+
+}
+
+
+
+
+/*본문1*/
+
+.content{
+    background-image: url(../image/bg.jpg);
+}
+section{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+.textbox{
+    float:left;
+    width:670px;
+}
+.textbox h2,h3{
+    color:#fff;
+}
+
+.icons{
+    float: right;
+    width: 550px;
+    text-align: center;
+    
+}
+.icons li {
+    float: left;
+    width:calc(550px / 4);    
+}

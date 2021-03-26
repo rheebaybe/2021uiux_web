@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+</head>
+    <style>
+        .box{
+            background: blue;
+            height: 200px;
+        }
+        .box1{
+            width: 100px;
+            height: 200px;
+            background: #000;
+            _margin-top: 20px; /*통째로 같이 떨어지니까 쓰지x 차라리 box에 패딩넣고 box에 높이x*/
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background: pink;
+            _margin-top:30px;/*적용은된다 튀어나오는이유는 box에 높이값이 있어서*/
+        }
+        .container{
+            background: orange;/*box에 높이가 있어서 붙어버려서 또 mt를 쓰게된다 */
+        }
+    </style>
+<body>
+    <div class="box">
+        <div class="box1">test</div>
+        <div class="box2">
+            test
+        </div>
+    </div>
+    <div class="container">
+        Lorem ipsum dolor sit amet.
+    </div>
+</body>
+</html>
