@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/jquery.bxslider.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery.bxslider.js"></script>
+    <script>
+        $(document).ready(function(){
+           var mySlider = $('.slider').bxSlider({
+              auto:true,
+              pager:false,
+              controls:false
+           });
+            $('.nextBtn').click(function(){
+                mySlider.goToNextSlide();
+            });
+            $('.prevBtn').click(function(){
+                mySlider.goToPrevSlide();
+            });
+        });
+    </script>
+    <style>
+        .container{
+            width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .container li img{
+            width: 100%;
+            display: block;
+        }
+        #header{
+            background: #ddd;
+        }
+        #header .container li{
+            float: left;
+            width:calc(1000px / 6);
+        }
+        #header .container li:hover{
+            background: pink;
+        }
+        #header .container li:hover a{
+            color:#fff;
+        }
+        
+        #header .container li a{
+            display: block;
+            line-height: 40px;
+            text-align: center;
+            font-weight: bold;
+        }
+         .bx-wrapper {
+            -moz-box-shadow:none;
+            -webkit-box-shadow:none;
+            box-shadow: none;
+            border: 0 none;
+            margin-bottom: 0;
+        }
+         .bx-wrapper .bx-pager{            
+            bottom: 30px;
+            
+        }
+        .bx-wrapper .bx-pager.bx-default-pager a.active{
+            background: red;
+            
+        }
+        .nextBtn,.prevBtn{
+            position: absolute;
+            top:50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            }
+            .nextBtn{                
+                right: 0;                
+            }
+            .prevBtn{                
+                left:0;                
+            }
+        section li{
+            float:left;
+            width:calc((1000px - 60px) / 4);
+        }
+        section li + li{
+            margin-left: 20px;
+        }
+        section h2,
+        section p{
+            text-align: center;
+        }
+        section h2:after{
+            content:"";
+            display: block;
+            width: 100px;
+            height: 1px;
+            background: #000;
+            margin: 10px auto;
+        }
+        section p{
+            margin-bottom: 20px;
+        }
+        .gray{
+            background: #eee;
+            padding-bottom: 200px;
+            padding-top: 20px;
+        }
+        .container{
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <ul class="clearfix">
+                <li><a href="#">menu</a></li>
+                <li><a href="#">menu</a></li>
+                <li><a href="#">menu</a></li>
+                <li><a href="#">menu</a></li>
+                <li><a href="#">menu</a></li>
+                <li><a href="#">menu</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="container">
+        <ul class="slider">
+            <li><img src="images/pc01.jpg" alt=""></li>
+            <li><img src="images/pc02.jpg" alt=""></li>
+            <li><img src="images/pc03.jpg" alt=""></li>
+        </ul>
+        <div class="nextBtn">
+            <img src="images/next.png" alt="">
+        </div>
+        <div class="prevBtn">
+            <img src="images/prev.png" alt="">
+        </div>
+    </div>
+    <div class="gray">
+        <section class="container">
+            <h2>gallery</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, ipsa.</p>
+            <ul class="clearfix">
+                <li><img src="../images/testimg.jpg" alt=""></li>
+                <li><img src="../images/testimg.jpg" alt=""></li>
+                <li><img src="../images/testimg.jpg" alt=""></li>
+                <li><img src="../images/testimg.jpg" alt=""></li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>

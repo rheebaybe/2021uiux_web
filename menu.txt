@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+     <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        li{
+            list-style: none;
+        }
+        a:link, a:visited{
+            color:black;
+            text-decoration:none;
+        }
+        .clearfix{
+            content:"";
+            display:none;
+            clear:both;
+        }
+        .nav{
+            width:1000px;
+            margin:auto;
+        }
+        .nav li{
+            float:left;
+            width:20%;
+            background:skyblue;
+        }
+        .nav li:hover{
+            background:pink;
+        }
+        .nav a{
+            display:block;
+            text-align:center;
+            line-height:40px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav clearfix">
+        <li><a href="#">menu1</a></li>
+        <li><a href="#">menu2</a></li>
+        <li><a href="#">menu3</a></li>
+        <li><a href="#">menu4</a></li>
+        <li><a href="#">menu5</a></li>
+    </ul>
+</body>
+</html>

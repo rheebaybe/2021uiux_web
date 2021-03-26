@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>himedia</title>
+    <style>
+        .box{
+            width:400px;
+            _height:400px;   /*clearflix를 쓸때는 height를 주면 안된다*/
+            border: 1px solid #000;
+        }
+        .box1, .box2{
+            float:left;
+            width:200px;
+            height:200px;
+            opacity:0.5;
+            
+        }
+        .box1{
+            background:#f00;
+        }
+        .box2{
+            background:#0f0;
+        }
+        .box3{
+            width:100px;
+            height:300px;
+            background: rgba(0, 0, 0, 0.34);
+        }
+        .clear{
+            clear:both;
+        }
+        .box4{
+            background:skyblue;
+        }
+        .box4:after{
+            content:"안녕"
+        }
+/*       인라인태그이며 자식요소에서 뒷부분*/
+        .box4:before{
+            content:"hi!"
+        }
+        
+/*        자식요소에서 앞부분*/
+        .clearfix:after{
+            content:"";
+            display:block;
+            clear: both;
+        }
+/*        float가 들어가있는 부모한테 넣어주는것이다*/
+    </style>
+</head>
+
+<body>
+    <div class="box clearfix">
+        <div class="box1">test1</div>
+        <div class="box2">test2</div>
+<!--        <div class="clear">ttt</div>-->
+    </div>
+    <div class="box3"></div>
+    <div class="box4">한성용</div>
+    
+</body>
+</html>
