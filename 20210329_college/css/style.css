@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+
+/*content*/
+
+#contents{
+    height:1300px;
+    background-image: url(../images/bg_dot.gif), url(../images/main_bg.jpg);
+    background-repeat: repeat, no-repeat;
+    background-position: center;
+    background-size:auto,cover;
+    padding:100px 0;
+}
+
+#contents .titleWrap{
+    width: 1200px;
+    height: 260px;
+    background: violet;
+    margin: 0 auto;
+}
+
+#contents .container{
+    width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+}
+
+#contents .container > ul >li{
+    float:left;
+    width: 25%;
+    height: 225px;
+}
+
+#contents .container>ul>li:nth-child(2n){  /*짝수*/
+    background: pink;
+}
+#contents .container>ul>li:nth-child(1){  /*짝수*/
+    width: 75%;
+    height: 450px;
+    background: gray;
+}
+#contents .container>ul>li:nth-child(2){  /*짝수*/
+    height:450px;
+}
+#contents .container>ul>li:nth-child(3){  /*짝수*/
+    background: pink;
+}
+#contents .container>ul>li:nth-child(4){  /*짝수*/
+    background: pink;
+}
+#contents .container>ul>li:nth-child(5){  /*짝수*/
+    background: pink;
+}
+#contents .container>ul>li:nth-child(6){  /*짝수*/
+    background: pink;
+}
+#contents .container>ul>li:nth-child(7){  /*짝수*/
+    background: pink;
+}
+#contents .container>ul>li:nth-child(8){  /*짝수*/
+    background: pink;
+}
