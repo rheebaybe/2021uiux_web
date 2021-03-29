@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>slider</title>
+    <link rel="stylesheet" href="css/jquery.bxslider.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery.bxslider.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".slider").bxSlider({
+                controls: false,
+                pagerCustom: ".sliderTab",
+                mode: "vertical"
+            });
+        });
+
+    </script>
+    <style>
+        .wrap {
+            width: 1000px;
+            height: 587px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .bx-wrapper {
+            -moz-box-shadow: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            border: 0 none;
+            margin-bottom: 0;
+        }
+
+        .bx-wrapper .bx-pager {
+
+            bottom: 30px;
+
+        }
+
+        .slider li img {
+            width: 100%;
+        }
+
+        .txtWrap {
+            _background: #f00;
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            width: 350px;
+        }
+
+        .txtWrap h2:after {
+            display: block;
+            content: "";
+            width: 50%;
+            height: 1px;
+            background: #f2506c;
+            margin-right: auto;
+            margin-top: 15px;
+        }
+
+        .txtWrap .btn {
+            display: block;
+            width: 150px;
+            border: 1px solid #000;
+            padding: 0 20px;
+            line-height: 40px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        .txtWrap p {
+            margin: 15px 0;
+        }
+
+        .wrap .sliderTab {
+            position: absolute;
+            height: 100%;
+            width: 15%;
+            background: orange;
+            left: 0;
+            bottom: 0;
+
+        }
+
+        .wrap .sliderTab a {
+            display: block;
+            height: calc(587px / 3);
+            text-align: center;
+            line-height: 190px;
+            color: white;
+        }
+
+        .wrap .sliderTab a:hover,
+        .wrap .sliderTab a.active {
+            background: red;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul class="slider">
+            <li>
+                <img src="images/main_slider01.jpg" alt="kids">
+                <div class="txtWrap">
+                    <h2>Lorem ipsum dolor sit amet.</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                    <a href="#" class="btn">자세히보기</a>
+                </div>
+            </li>
+            <li>
+                <img src="images/main_slider01.jpg" alt="kids">
+                <div class="txtWrap">
+                    <h2>Lorem ipsum dolor sit amet.</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                    <a href="#" class="btn">자세히보기</a>
+                </div>
+            </li>
+
+            <li>
+                <img src="images/main_slider01.jpg" alt="kids">
+                <div class="txtWrap">
+                    <h2>Lorem ipsum dolor sit amet.</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                    <a href="#" class="btn">자세히보기</a>
+                </div>
+            </li>
+
+        </ul>
+        <div class="sliderTab">
+            <a href="#" data-slide-index="0">menu1</a>
+            <a href="#" data-slide-index="1">menu2</a>
+            <a href="#" data-slide-index="2">menu3</a>
+        </div>
+    </div>
+</body>
+
+</html>
