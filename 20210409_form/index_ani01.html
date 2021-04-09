@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background: #f00;
+            animation-name:ani;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-delay: 1s;
+            animation-timing-function: ease out; 
+        }
+        @keyframes ani{
+            from{
+                width: 100px;
+                opacity: 0;
+            }
+            to{
+                width: 200px;
+                background: #0f0;
+                opacity: 1;
+            }
+        }
+
+
+
+        div.boxWrap{
+            width: 600px;
+            height: 600px;
+            background: #eee;
+            position: relative;
+        }
+
+        div.boxWrap:hover .box01{
+            animation-name:box01;
+        }
+        div.boxWrap:hover .box02{
+            animation-name:box02;
+        }
+        div.boxWrap:hover .box03{
+            animation-name:box03;
+        }
+        div.boxWrap:hover .box04{
+            animation-name:box04;
+        }
+
+
+        div.boxWrap .box01{
+            width: 600px;
+            /* width: 0; */
+            height: 10px;
+            background: #000;
+            /* animation-name:box01; */
+            animation-duration: 1s;
+            /* animation-fill-mode: forwards; */
+        }
+
+        div.boxWrap .box02{
+            width: 10px;
+            height: 600px;    
+            background: #f00;
+            position: absolute;
+            right: 0;
+            top: 0;
+            /* animation-name:box02; */
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            animation-delay: 1s;
+        }
+
+        div.boxWrap .box03{
+            position: absolute;
+            width: 0;
+            height: 10px;
+            right:0;
+            bottom:0;
+            background: blue;
+            /* animation-name:box03; */
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            animation-delay: 2s;
+        }
+
+        div.boxWrap .box04{
+            position: absolute;
+            width: 10px;
+            height: 0;
+            bottom:0;
+            left:0;
+            background:orange;
+            /* animation-name:box04; */
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            animation-delay:3s;
+        }
+
+
+        @keyframes box01{
+            from{
+                width: 0;
+            }
+            to{
+                width: 600px;
+            }
+        }
+
+        @keyframes box02{
+            from{
+                height: 0;
+            }
+            to{
+                height: 600px;
+            }
+        }
+
+        @keyframes box03{
+            from{
+                width: 0;
+            }
+            to{
+                width: 600px;
+            }
+        }
+
+        @keyframes box04{
+            from{
+                height: 0;
+            }
+            to{
+                height: 600px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+
+
+
+
+
+<div class="boxWrap">
+    <div class="box01"></div>
+    <div class="box02"></div>
+    <div class="box03"></div>
+    <div class="box04"></div>
+</div>
+
+
+
+</body>
+</html>

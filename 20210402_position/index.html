@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>position</title>
+  <style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  /* div.box1,
+  .box2,
+  .box3{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  div.box1{
+    background: skyblue;
+
+  }
+  div.box2{
+    background: red;
+    position: absolute;
+    left: 100px;
+    top: 50px;
+  }
+  div.box3{
+    background: orange;
+
+  } */
+  </style>
+</head>
+<body>
+  <div class="box1">box1</div>
+  <div class="box2">box2</div>
+  <div class="box3">box3</div>
+
+<style>
+
+.boxWrap{
+  width: 100px;
+  height: 100px;
+  background: #f00;
+  overflow: hidden;
+  position: relative;
+}
+.boxWrap a{
+  display: block;/*a는 인라인태그라서 width값이 안 먹는다*/
+  width: 100px;
+  height: 100px;
+  background: skyblue;
+}
+.boxWrap div.box10{
+position: absolute;
+bottom: 0;
+background: #f00;
+width: 100%;/*부모자의크기만큼 된다*/
+}
+</style>
+
+
+  <div class="boxWrap">
+    <a href="#">test</a>
+    <div class="box10">view</div>
+  </div>
+
+
+</body>
+</html>
