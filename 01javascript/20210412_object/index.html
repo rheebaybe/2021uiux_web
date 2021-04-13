@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+<body>
+    <p id="var1">test</p>
+    <p id="var2"></p>
+    <p id="var3"></p>
+    <script>
+        const car = {
+            name:'sonata',
+            speed:100,
+            color:"red",
+            // m1:function(){
+            //     return "hello"
+            // },
+            m1:() => {
+                return "hello";
+            },
+
+
+
+            // m2:function(han){
+            //  let result = han;
+            //  return result;
+            // },
+            m2:(han) => {
+                let result = han;
+                return result;
+            },
+
+            // m3:function(a,b){
+            //     let result = a + b;
+            //     return result;
+            // },
+
+            m3:(a,b) => {
+                let result = a + b;
+                return result;
+            }
+        }
+        // document.getElementById("var1").innerHTML = "자동차의 이름은" + car.name;
+        // document.getElementById("var1").style.backgroundColor = "#f00";
+        // document.getElementById("var1").style.border = "1px solid #f0f";
+
+        const var1 = document.getElementById("var1");
+        const var2 = document.getElementById("var2");
+        
+        var1.innerHTML = car.name;
+        var1.style.backgroundColor = "#0f0";
+
+        var2.innerHTML = car.m1();
+
+       
+
+    </script>
+
+
+
+</body>
+</html>

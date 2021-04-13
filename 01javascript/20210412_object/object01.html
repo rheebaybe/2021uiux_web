@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+<body>
+    <p id="var1">정보1</p>
+    <p id="var2">정보2</p>
+    <p id="var3" class="view1">정보3</p>
+    <p id="var4" class="view1">정보4</p>
+    
+    <script>
+        console.log( document.getElementById("var1").innerHTML );
+        console.log( document.getElementsByTagName("p")[0].innerHTML );
+        console.log( document.getElementsByTagName("body")[0].innerHTML);
+
+     
+
+
+
+
+        document.getElementById("var1").innerHTML = "변경1";
+        document.getElementsByTagName("p")[1].innerHTML = "변경2";
+        document.getElementsByTagName("body")[0].style.backgroundColor = "skyblue";
+        document.getElementsByClassName("view1")[0].innerHTML = "변경3";
+        document.getElementsByClassName("view1")[1].innerHTML = "변경4";
+
+
+        
+
+        document.querySelectorAll(".view1")[0].style.backgroundColor = "orange";
+        document.querySelectorAll(".view1")[1].style.backgroundColor = "orange";
+        
+
+        function view(){
+            const view = document.querySelectorAll(".view1");
+        
+
+        for(let i=0;i<view.length;i++){
+            view[i].style.border = "3px solid #f00"
+            }
+        }
+       
+
+        // function bg(){
+        //     const bg = document.querySelectorAll("body")[0].style.backgroundColor = "orange";
+            
+        
+        // }    
+        // function bg2(){
+        //     const bg2 = document.querySelectorAll("body")[0].style.backgroundColor = "yellow";
+            
+        
+        // }    
+        
+        // bg[0]=style.backgroundColor = "orange";
+        // bg[1]=style.backgroundColor = "yellow";
+        
+        
+        function bg(a){
+            const bg = document.getElementsByTagName("body");
+            if(a==0){
+                bg[0].style.backgroundColor = "orange"
+            }
+            else{
+                bg[0].style.backgroundColor = "yellow"
+            }
+                    }
+    
+       
+        
+
+
+    function btn(x)                    {
+        const bodyview = documnet.getElementsByTagName("body")
+        bodyview[0].style.backgroundClor = x;
+    }
+    </script>
+
+    <button onclick="view()">테두리변경</button>
+    <button onclick="bg(0)">배경변경 오렌지</button>
+    <button onclick="bg(1)">배경변경 노랑</button>
+
+
+    <button onclick="btn1('orange')">배경변경 오렌지</button>
+    <button onclick="btn2('yellow')">배경변경 노랑</button>
+    
+
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .box{
+            width:300px;
+            height: 300px;
+            background: skyblue;
+            border: 10px solid skyblue;
+            overflow: hidden;
+            transition:.3s;
+            position: relative;
+        }
+        .box img{
+            width: 100%;
+            transition:0.3s;
+        }
+        .box:hover img{
+            transform:scale(1.2);
+        }
+        .box:hover {
+            border: 20px solid skyblue;
+        }
+
+        .cWrap{
+            width: 50px;
+            height: 50px;
+            /* background: red; */
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform:translate(-50%,-50%);
+            border-radius: 25px;
+            border: 4px solid #fff;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            /*flex는 자식정렬*/
+            transition: .3s;
+
+        }
+
+        /* .cWrap div{
+            width: 30px;
+            height: 4px;
+            background: #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            border-radius: 4px;
+        }
+
+        .cWrap .bar1{
+            transform: translate(-50%,-50%);
+        }
+
+        
+        .cWrap .bar2{
+            transform: translate(-50%,-50%);
+        } */
+
+        /* .cWrap .bar1{
+            width: 30px;
+            height: 4px;
+            background: #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform:translate(-50%);
+            border-radius: 4px;
+        }
+        .cWrap .bar2{
+            width: 30px;
+            height: 4px;
+            background: #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;            
+            transform:translate(-50%) rotate(90deg);
+            border-radius: 4px;
+        } */
+
+
+
+        .cWrap div{
+            width: 30px;
+            height: 4px;
+            background: #fff;
+            position: absolute;
+            border-radius: 4px;
+        }
+        .cWrap .bar2{
+            transform:rotate(90deg);
+        }
+
+
+        .box:hover .cWrap{
+            transform: translate(-50%,-50%) rotate(180deg);
+            /*cwrap에서 트랜스폼트랜스레이트한게 날라갔기때문에 다시 넣어줘야한다*/
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="../images/testimg.jpg" alt="testimg" class="img01">
+        <div class="cWrap">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+        </div>
+    </div>
+
+
+    <style>
+        .box01{
+            width: 300px;
+            height: 300px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            cursor:pointer;
+        }
+        .box01 img{
+            position: absolute;
+            transition: .3s;
+        }
+        .box01 .bg{
+            width: 100%;
+            height: 100%;
+            background: #000;
+            opacity:0;
+            position: absolute;
+            transform:scale(0.7);
+            transition: .3s;
+        }
+        .box01 h3{
+            position: absolute;
+            transform:translateY(160px);
+            transition: .3s;
+            color:#fff;
+        }
+
+        .box01:hover img{
+            transform:scale(1.1);
+        }
+        .box01:hover .bg{
+            opacity:0.5;
+            transform:scale(.5);
+        }
+        .box01:hover h3{
+            transform:translateY(0)
+;        }
+    </style>
+
+
+    <div class="box01">
+        <img src="../images/testimg.jpg" alt="">
+        <div class="bg">1</div>
+        <h3>MY TOUR</h3>
+    </div>
+
+    <style>
+        .btnWrap{
+            width: 200px;
+            height: 40px;
+            position: relative;
+        }
+        .btnWrap a{
+            display: block;
+            text-align: center;
+            line-height: 35px; /*bar가 5px있기때문*/
+        }
+        .btnWrap .bar10{
+            /*1번방법width: 0; hover할때 100으로 해놨기때문에 그때 나타나야해서 0으로 해놓음*/
+            /*2번 width: 100%; */
+            /*1번방법 height: 5px; */
+            width: 0;
+            height: 5px;
+            
+            background: red;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            transition:.3s;
+        }
+        .btnWrap:hover .bar10{
+            /*1번방법 width: 100%; */
+            /*2번 height: 5px; */
+            width: 100%;
+        }
+    </style>
+
+
+    <div class="btnWrap">
+        <a href="#">BUTTON</a>
+        <div class="bar10"></div>
+    </div>    
+
+
+
+
+
+
+    <style>
+
+        .btnWrap01{
+            width: 200px;
+            height: 40px;
+            position: relative;
+        }
+        .btnWrap01 a{
+            display: block;
+            text-align: center;
+            line-height: 40px;
+            position: relative;
+        }
+        .btnWrap01 .bar10{
+            position: absolute;
+            width: 100%;
+            height: 40px;
+            background: #00f;
+            left: 0;
+            bottom: 0;
+            /* transform:scale(0); */
+            transform:scaleX(0);
+            transition: .3s;
+            transform-origin:0 50%; /*중심축에 의한 이동, x축 기준0은 왼쪽 50 중간 100은 오른쪽*/
+        }
+        .btnWrap01:hover .bar10{
+            /* transform:scale(1); */
+            transform:scaleX(1);
+            transform-origin: 100% 50%;
+        }
+        .btnWrap01:hover a{
+            color:#fff;
+        }
+    </style>
+
+
+    <div class="btnWrap01">
+        <div class="bar10"></div>
+        <a href="#">BUTTON</a>
+        <!-- <a href="#">BUTTON</a>
+        <div class="bar10"></div>  z-index를 사용하기 싫으면 위에처럼 bar를 html상에서 먼저 둔다-->
+        
+        
+    </div>    
+
+
+</body>
+</html>
