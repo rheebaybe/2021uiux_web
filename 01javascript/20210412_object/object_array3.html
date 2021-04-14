@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+<body>
+    <p id="data00"></p>
+    <p id="data01"></p>
+
+
+
+    <p id="data10"></p>
+    <p id="data11"></p>
+
+
+
+    <p id="data20"></p>
+    <p id="data21"></p>
+    <script>
+        let car1 = {name:"sonata",color:"red"}
+        let car = ["sonata","blue"];
+        let car2 = [
+            {name:"sonata",color:"green",speed:100},
+            {name:"jeep",color:"red",speed:100},
+            {name:"passat",color:"blue",speed:100}
+        ]
+
+
+
+        for(let i=0;i<car2.length;i++){
+            console.log(i)
+            document.getElementById("data"+i+"0").innerHTML = "자동차의 이름 : " + car2[i].name + "입니다";
+            document.getElementById("data"+i+"1").innerHTML = `${car2[i].name}의 색상은 자동차의 색상 : ${car2[i].color} 입니다`;
+        }
+    </script>
+</body>
+</html>

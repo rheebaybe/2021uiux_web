@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="carName"></div>
+    <div id="myCar"></div>
+    <script>
+        //let car = new Object();// new Date(); new Array();
+
+
+        let car = {
+            name:"sonata",
+            color:"red",
+            speed:100,
+            "tire num":4,
+            start:() =>{
+                return this.speed +100;
+            }
+        }; //객체선언
+
+        document.getElementById("carName").innerHTML = car.name;
+
+
+        let myCar = {};
+        myCar.name = "bolt";
+        myCar.color = "red";
+
+        //"key" in object;
+
+        "name" in myCar;
+
+        console.log("name" in myCar)
+
+        //for....in 반복문
+        for(key in myCar){
+            console.log(key + " : " + myCar[key]);
+            
+        }
+
+    function carView(){
+        document.getElementById("myCar").innerHTML = myCar.name;
+    }
+
+
+
+    //생성자함수
+    function Carblue(name,color){
+        this.name = name;
+        this.color = color;
+
+    }
+
+    let hancar = new Carblue("sonata","blue");
+    let yourcar = new Carblue("avante","red")
+    </script>
+
+
+<button onclick="carView()">나의 자동차는</button>
+</body>
+</html>
