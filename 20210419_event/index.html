@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+</head>
+<body>
+    <p id="p">마우스를 올려보세요</p>
+    <button onclick="btnClick(event)">클릭하세요</button>
+    <!-- btnClick=함수이름 event는 인자-->
+    <script>
+        function btnClick(event){
+            //event는 매개변수
+            alert(event.type)
+        }
+        // document.getElementById("p").onmouseover = btnClick;
+        // document.querySelector("#p").onclick = btnClick;
+        // p중에 첫번째
+        document.querySelectorAll("p")[0].onmousedown = btnClick;
+        // p태그 중에 첫번재[0]
+    </script>
+</body>
+</html>

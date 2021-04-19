@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scroll</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        body{
+            height: 4000px;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background: skyblue;
+            position: absolute;
+            transition:.3s;
+            left: 0;
+        }
+        .view{
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            padding:20px;
+            background: #eee;
+        }
+        .boxview{
+            background: orange;
+            left: 500px;
+        }
+        .box.box1{
+            top: 700px;
+        }
+        .box.box2{
+            top: 1400px;
+        }
+        .box.box3{
+            top: 2000px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1">box1</div>
+    <div class="box box2">box2</div>
+    <div class="box box3">box3</div>
+    <div class="view">
+        <p>scroll : <span class="scrollView">0</span></p>
+        <p>window Height / 2 : <span class="winHeight">0</span></p>
+    </div>
+    <script>
+        const scrollY = document.querySelector(".scrollView"); 
+        // querySelector-> 선택된 요소 중 첫번째 요소만 선택 .scrollview에서 첫번째 dom 선택해서 scrollY변수에 저장
+        const boxPos = document.querySelectorAll(".box");
+        const winH = document.querySelector(".winHeight");
+        //windHeight랑 다른 이름 써야해서 windH 동일한 이름은 하나밖에 없어서 자동으로
+        //.winHeight가 나올것이다
+        
+     
+        
+
+
+
+
+
+        window.addEventListener("scroll",function(){
+            // addEventListener() -> 지정된 요소에 이벤트 핸들러 연결 
+
+            
+
+            console.log(window.pageYOffset);
+            const scrollYPosition = window.pageYOffset;
+            scrollY.innerHTML = scrollYPosition;
+            //innerHTML은 문자방식으로 요소를 생성하는 방법
+
+            // if(700<scrollYPosition){
+            //     boxPos[0].classList.add("boxview")
+            // }
+            // else{
+            //     boxPos[0].classList.remove("boxview")
+            // }
+
+            for(let i=0;i<boxPos.length;i++){
+                if(boxPos[i].offsetTop<scrollYPosition + winHeight){
+                    //왼쪽항 고정(700으로 고정됨)<우측(스크롤와이포지션)은 변경값 + 브라우저에서 볼수있는 반의 크기
+                    boxPos[i].classList.add("boxview");
+                }else{
+                    boxPos[i].classList.remove("boxview");
+                    //조건이 안 맞으면 
+                }
+            }
+        });
+
+
+        // window.addEventListener("resize",function(){});
+        window.addEventListener("resize",view);
+        function view(){
+            
+            const winHeight = window.innerHeight/2;
+            winH.innerHTML = winHeight;
+//안에서만 작동
+        }
+        view();
+    </script>
+</body>
+</html>

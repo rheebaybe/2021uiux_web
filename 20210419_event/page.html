@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            height: 1000px;
+           
+        }
+        .boxWrap{
+            position: fixed;
+            right: 0;
+        }
+        #box02{
+            background: skyblue;
+        }
+    </style>
+</head>
+<body>
+<div class="boxWrap">
+    <a href="#box01">box01로 이동</a>
+    <a href="#box02">box02로 이동</a>
+    <a href="#box03">box03로 이동</a>
+    <!-- <a href="#" onclick="return false">top</a> -->
+    <!-- 억지로 막아준다 ex)버튼을 a태그로 쓸때 링크를#으로 해놓으면 올라간다 그것을 막기위해 쓴다 -->
+    <!-- <a href="#" onclick="event.preventDefault()">top</a> -->
+    <!-- 똑같이 기본 기능을 막아준다 -->
+    <a href="#" onclick="mClick(event)">top</a>
+
+</div>
+
+
+    <div class="box" id="box01">1</div>
+    <div class="box" id="box02">2</div>
+    <div class="box" id="box03">3</div>
+
+
+    <script>
+        function mClick(e){
+            e.preventDefault();
+        }
+    </script>
+</body>
+</html>
