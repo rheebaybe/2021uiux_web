@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- cdn -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    <!-- 구글이나 w3c에서 가져올수있다 링크 가져와서쓰는것=cdn-->
+    <script src="../../js/jquery-3.1.1.min.js"></script>
+    <script>
+        // jQuery(document).ready(function(){});
+        // 문서를 읽고(documnet) 준비되면(ready) 실행하라 상단에 두기때문에 필요한 구문이다
+        $(document).ready(function(){
+        // 될수있는한 한번만 쓰기
+            // $("button.btn").on("click",function(){});
+            // document.getElementsByClassName("btn")[0].addEventListener("click",function(){})
+            // 자바스크립트에서 쓰는 법
+            $("button.btn").click(function(){
+            // 위의 축약형이다
+            // document.querySelector(".box").style.display = "block"
+                $(".box").show();
+                // 위의 축약형
+            });
+            $(".box").click(function(){
+                // $(".box").hide();
+                $(this).hide();
+            });
+
+            $("ul.gnb>li").click(function(){
+                // function = 이벤트
+                console.log ( $(this).index() ) ;
+                // li에(this) 몇번째(index)
+                // $(this).css("background-color"); get -> 값을 갖고 온다
+                // $(this).css("background-color","skyblue"); set-> 값을 변경한다
+                // $(this).css("background-color","skyblue");
+                // $("ul.gnb>li").css("background-color","skyblue");
+                // 이경우엔 전부 다 변경된다 li는 전체적인거고 this는 개별적이다
+                
+
+                $("ul.gnb>li").css("background-color","white");
+                // 전체 색상
+                $(this).css("background-color","skyblue");
+                // li의 자기자신만. 개별적인 색상
+                console.log( $(this).css("background-color"));
+                // 색깔값을 갖고 온다
+            });
+        });
+    </script>
+    <style>
+        .box{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn">click</button>
+    <div class="box">
+        Hello
+    </div>
+    <ul class="gnb">
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+        <li>menu5</li>
+    </ul>
+</body>
+</html>

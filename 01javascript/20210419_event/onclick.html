@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onclick</title>
+</head>
+<style>
+    html,body{
+        height: 100%;
+    }
+</style>
+<body onmousemove="where(event)">
+    <script>
+        function where(e){
+            // e=event
+            console.log("x값:" + e.clientX+", y값:" + e.clientY)
+        }
+    </script>
+    정보입력<input type="text" id="exp" value="0"><br>
+    값<input type="text" id="result">
+    <input type="button" value="계산" onclick="calc()">
+    <script>
+        function calc(){
+            const exp = document.getElementById("exp");
+            const result = document.getElementById("result");
+            console.log(eval(exp.value));
+
+            result.value = eval(exp.value)       };
+    </script>
+
+<div>mouse <span 
+    onmousedown="down(this)"
+    onmouseup = "up(this)"
+    onmouseover = "over(this)"
+    onmouseout = "out(this)"
+    onwheel = "wheel(event,this)"
+ 
+    >event</span> ok</div>
+   <!-- 휠관련일때는 event가 들어가야한다 wheel 이벤트를 span에게 적용한다는 의미-->
+<script>
+    function down(obj){
+        // document.querySelector("span").style.fontStyle = "italic";
+        // document.getElementsByTagName("span")[0].style.fontStyle = "italic";
+        // document.querySelectorAll("span")[0].style.fontStyle = "italic";
+        obj.style.fontStyle = "italic";
+
+
+    }
+    function up(obj){
+        obj.style.fontStyle = "normal";
+    }
+
+    function over(obj){
+        obj.style.border = "1px solid violet"
+    }
+    function out(obj){
+        obj.style.border = "1px solid lightgray"
+    }
+
+    function wheel(event,obj){
+        console.log (event.wheelDelta)
+    }
+</script>
+
+
+
+
+</body>
+</html>

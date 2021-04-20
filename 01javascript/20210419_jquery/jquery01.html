@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <script src="../../js/jquery-3.1.1.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+                $("p").eq(1).css("background","skyblue");
+            // eq(0) 숫자는 p의 몇번째인지 표시 background는 값을 갖고 온다 변경할것은 인자로 넣는다(skyblue)
+            $("p").eq(2).css("color","red");
+
+
+
+            document.getElementsByTagName("p")[3].style.color="blue";
+            // 자바스크립트로 폰트를 변경할때 제이쿼리는 상대적으로 간단하다
+        });
+        
+    </script>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium aspernatur quas, consectetur harum quam est debitis veritatis ad possimus facilis? Soluta animi nam, illo non nobis dolore dicta sapiente eligendi.</p>
+    <p>Suscipit totam labore ex nostrum ab nihil facilis, ad culpa odit veritatis neque enim, molestias ratione optio explicabo. Voluptas quos numquam alias neque nobis dolor enim quam quae error minus.</p>
+    <p>Fugiat ab in beatae dolores officia adipisci recusandae eligendi earum nostrum, quisquam dicta ullam dignissimos. Officiis alias quo, praesentium consequuntur totam illum dolores iusto, ipsam dignissimos ipsum dolorum optio tempora!</p>
+    <p>Quisquam tempora consequuntur nobis commodi at. Atque accusamus debitis in dolorem impedit architecto qui placeat distinctio mollitia cumque ipsam reprehenderit, suscipit, facilis fugiat animi fuga repellendus incidunt nostrum quam amet!</p>
+    <p>Dicta corporis quidem, quisquam dolore, id totam similique numquam saepe ea nobis harum optio aliquid dolorem atque repellat explicabo illo reprehenderit nam? Voluptatum asperiores, modi rem iusto ratione ad maiores!</p>
+    
+    <ul class="tab">
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+        <li>menu5</li>
+    </ul>
+
+    <div class="boxWrap">
+        <div class="box1">1. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo, architecto.</div>
+        <div class="box2">2. Numquam minus dolores quaerat possimus veniam ipsam neque dignissimos at?</div>
+        <div class="box3">3. Quasi eveniet, eligendi a voluptates culpa ea corporis eos quae!</div>
+        <div class="box4">4. Debitis veritatis iure maiores ea dicta voluptates? Accusamus, numquam voluptatibus.</div>
+        <div class="box5">5. Sequi impedit hic nostrum magnam quis, harum sunt maiores nihil.</div>
+    </div>
+
+    <script>
+        //$(".tab>li").on("click",function(){})
+        //$(".boxWrap>div").hide();
+        //hide=display:noneblock 
+        //$(".boxWrap>div").eq(0).show();
+        //div중 첫번째(eq0)를 보여준다(show)
+
+        $(".boxWrap>div").hide().eq(0).show();
+
+        $(".tab>li").click(function(){
+        // click->이벤트 메소드 tabli를 클릭해서 function
+        //  $(".tab>li").eq(0).css("background","pink");
+        $(".tab>li").css("background","white");
+        $(this).css("background","pink");
+        console.log($(this).index());
+
+
+        //$(".boxWrap>div").hide();
+        //$(".boxWrap>div").eq($(this).index()).show();
+        $(".boxWrap>div").hide().eq($(this).index()).show();
+        //줄였을때 선택자를 동일하게 해주고 이어준다
+    });
+    </script>
+
+
+</body>
+</html>
