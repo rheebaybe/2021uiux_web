@@ -11,7 +11,7 @@
         height: 100%;
     }
 </style>
-<body onmousemove="where(event)">
+<!-- <body onmousemove="where(event)"> -->
     <script>
         function where(e){
             // e=event
@@ -59,8 +59,27 @@
         obj.style.border = "1px solid lightgray"
     }
 
-    function wheel(event,obj){
-        console.log (event.wheelDelta)
+    let width = 0;
+    //밖에 있게되면 0으로 시작했다가 누적되기시작한다(위치가 중요)
+    function wheel(e,obj){
+        // console.log (e.wheelDelta);
+        //let width = 0;
+        //let width = 0이 안에 있게 되면 한번 휠을 했다가 다시 0으로 돌아간다 초기화됨
+        if(e.wheelDelta < 0){
+            width--;
+        // -로 width값을 1씩 떨어뜨린다    
+            if(width<0){
+                width=0;
+            }
+        //0미만이 되면 width를 0으로 유지시킨다    
+        }else{
+            width++;
+        }
+        //0보다 크면 width값을 1씩 +한다
+        console.log(width);
+        obj.style.borderStyle="solid";
+        obj.style.borderWidth= width + "px"
+        // obj.style.borderWidth = `${width} px`;
     }
 </script>
 
