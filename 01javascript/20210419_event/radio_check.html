@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>radio</title>
+</head>
+<body>
+    <form>
+        <!-- <input type="text" name="userid" value=""> -->
+        <input type="text" name="userid">
+        <label for="seoul">서울</label>
+        <input type="radio" name="city" value="seoul" id="seoul" checked>&nbsp;&nbsp;
+        <!-- true 생략가능 -->
+        <label for="busan">부산</label>
+        <input type="radio" name="city" value="busan" id="busan">&nbsp;&nbsp;
+        <label for="chunchen">춘천</label>
+        <input type="radio" name="city" value="chunchen" id="chunchen">
+        <input type="button" value="확인" onclick="findChecked()">
+    </form>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>togglemenu</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <script src="../../js/jquery-3.1.1.min.js"></script>
+    <style>
+        .toggleMenu{
+            width: 50px;
+            height: 50px;
+            border: 1px solid #000;
+            position: relative;
+            cursor: pointer;
+        }
+        .toggleMenu div{
+            width: 34px;
+            height: 5px;
+            background: #000;
+            border-radius: 3px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            transition:0.3s;
+        }
+        .bar1{
+            top: 11px;
+        }
+        .bar2{
+            top: 22px;
+        }
+        .bar3{
+            top: 33px;
+        }
+        .toggleMenu.change .bar1{
+            left:50%;
+            top:50%;
+            transform: translate(-50%,-50%) rotate(-45deg);           
+
+        }
+        .toggleMenu.change .bar2{
+            opacity: 0;        
+
+        }
+        .toggleMenu.change .bar3{
+            left:50%;
+            top:50%;
+            transform: translate(-50%,-50%) rotate(45deg);           
+
+        }
+    </style>
+</head>
+<body>
+    <div class="toggleMenu" onclick="toggle()">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+
+    <script>
+        // $(".toggleMenu").click(function(){
+            
+        //     const toggle = $(".toggleMenu").attr("class"); // get
+        //     // alert(toggle) 작동하는지 확인용
+        //     if(toggle == "toggleMenu"){
+
+        //     $(".toggleMenu").addClass("change");
+        //     }else{
+        //         $(".toggleMenu").removeClass("change");
+        //     }
+        // });
+
+        
+        // document.getElementsByClassName("toggleMenu")[0].addEventListener("click", function(){
+            
+        //     const toggle = document.getElementsByClassName("toggleMenu")[0].getAttribute("class");
+        //     if(toggle == "toggleMenu"){
+        //         document.getElementsByClassName("toggleMenu")[0].classList.add("change");
+        //     }else{
+        //         document.getElementsByClassName("toggleMenu")[0].classList.remove("change");
+        //     }
+
+        // });
+
+        
+            // var tG = document.getElementsByClassName("toggleMenu")[0];
+            // tG.onclick = function(){
+              
+            //     const toggle = tG.getAttribute("class");
+            //     if(toggle == "toggleMenu"){
+            //     tG.classList.add("change");
+            //     }else{
+            //     tG.classList.remove("change");
+            //     }                
+
+            // };
+            var tG = document.getElementsByClassName("toggleMenu")[0];
+            function toggle(){
+            const toggle = tG.getAttribute("class");
+               if(toggle == "toggleMenu"){
+                 tG.classList.add("change");
+                }else{
+                tG.classList.remove("change");
+              }   
+        }
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
