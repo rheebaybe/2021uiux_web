@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkbox</title>
+</head>
+<body>
+    <form action="calc.php" method="get">
+        모자<input type="checkbox" name="hap" value="10000" onclick="calc(this)">
+        <!-- this=input 자기자진 ,value 10000은 숫자가 아니고 문자 -->
+        <!-- html=onclick -->
+        구두<input type="checkbox" name="hap" value="50000" onclick="calc(this)">
+        가방<input type="checkbox" name="hap" value="100000" onclick="calc(this)">
+        <input type="text" id="sumtext" value="0">
+    </form>
+    <script>
+        let sum = 0;
+        // =initial
+        function calc(cBox){
+            // this=cBox 매개변수로 받은것
+            // console.log(cBox.value)
+            if(cBox.checked){
+                sum = sum + parseInt(cBox.value);
+                console.log(sum);
+            }else{
+                sum = sum - parseInt(cBox.value);
+            }
+            document.getElementById("sumtext").value = sum;
+            // value=property
+            // document.getElementById("sumtext") = dom
+        }
+    </script>
+</body>
+</html>

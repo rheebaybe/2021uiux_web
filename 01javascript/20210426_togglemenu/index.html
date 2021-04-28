@@ -12,8 +12,11 @@
             width: 50px;
             height: 50px;
             border: 1px solid #000;
-            position: relative;
+            position: absolute;
             cursor: pointer;
+            right: 0;
+            top: 0;
+            display: none;
         }
         .toggleMenu div{
             width: 34px;
@@ -50,15 +53,120 @@
             transform: translate(-50%,-50%) rotate(45deg);           
 
         }
+        .menuWrap{
+            width: 1200px;
+            height: 50px;      
+            background: pink;      
+            margin: 0 auto;
+            position: relative;
+        }
+        .menuWrap h1{
+            background: skyblue;
+            width: 100px;
+            height: 50px;
+            text-align: center;
+        }
+        #myTopMenu{
+            position: absolute;
+            left: 100px;
+            top: 0;
+        }
+        #myTopMenu a{
+            display: block;
+            float: left;
+            padding:14px 10px;
+        }
+        .content{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        @media screen and (max-width:575px){
+            body{
+                background: green;
+            }
+            .menuWrap{
+                width: 100%;
+            }
+            .toggleMenu{
+                display: block;
+            }
+            #myTopMenu{
+                position:fixed;
+                width: 100%;
+                height: 100%;
+                background: orange;
+                left: 0%;
+                top: -100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                _transition:.3s;
+            }
+            .topNav{
+                background: green;
+                width: 50%;
+            }
+            .topNav a{
+                float:initial !important;
+                /* 위쪽에 float: left;때문에 */
+                text-align: center;
+                /* 블록단위기때문에 중앙정렬이 가능했다 display: block;처리해놨었음 */
+                
+            }
+            .content{
+                width: 100%;
+                padding:20px 20px;
+            }
+        }
+        @media screen and (min-width:576px) and (max-width:991px){
+            body{
+                background: skyblue;
+            }
+            .menuWrap{
+                width: 100%;
+            }
+            #myTopMenu{
+                left: initial;
+                right: 0;
+            }
+            .content{
+                width: 100%;
+                padding:20px 20px;
+            }
+        }
+        @media screen and (min-width:992px){
+            /* 992 이상일때 pc버전 */
+            .menuWrap{
+                position: fixed;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .content{
+                padding-top:70px;
+            }
+        }
     </style>
 </head>
 <body>
+<div class="menuWrap">
+    <h1>logo</h1>
+    <div id="myTopMenu">
+        <nav class="topNav clearfix">
+            <a href="#">HOME</a>
+            <a href="#">NEWS</a>
+            <a href="#">CONTACT</a>
+            <a href="#">PRODUCT</a>
+        </nav>
+    </div>
     <div class="toggleMenu" onclick="toggle()">
         <div class="bar1"></div>
         <div class="bar2"></div>
         <div class="bar3"></div>
     </div>
-
+</div>
+<div class="content">
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod adipisci quasi, sapiente iusto recusandae aliquid repudiandae deserunt veritatis. Laudantium in officiis laborum. A sed id cum delectus eveniet ipsum, reprehenderit nesciunt quo ducimus est magnam tenetur consequuntur molestias quos quas quis amet voluptas assumenda beatae ratione eligendi inventore quidem maxime aperiam. Voluptatem temporibus voluptatum omnis. Qui sint, necessitatibus ratione repudiandae esse tenetur? Voluptate natus id eum quaerat nostrum esse quam excepturi. Repellat officia error minima animi tempore consequatur quis similique atque mollitia quae natus eaque dicta temporibus velit quam, quo voluptatibus itaque et provident eligendi aliquam blanditiis ut minus ipsum! Autem minima vitae dignissimos nobis dolore ullam. Iure, ipsa. Iure dolorum rem quam pariatur enim incidunt temporibus animi? Commodi, mollitia sapiente accusamus aut consectetur maxime id? Aspernatur voluptatibus iure, accusantium distinctio quae quas aperiam maiores quisquam accusamus nemo! Ipsum ut voluptas aliquam at hic necessitatibus animi cum corporis magnam numquam nesciunt minima accusantium quidem quas atque qui, quo in nemo sint repellat commodi. Incidunt laboriosam ex sint enim iste totam inventore excepturi quidem reprehenderit. Error est suscipit consectetur, exercitationem fugiat ea repellat! Saepe maiores dolores asperiores nulla? Magnam repellat molestiae, cum itaque dolorum eligendi obcaecati quia excepturi officiis fugit, ipsum error delectus ducimus quod cumque enim hic. Quo ipsam reiciendis inventore enim reprehenderit impedit libero nam obcaecati aut magni, excepturi ab facilis nobis. Officia sunt esse est placeat, animi alias cumque quasi repellendus quam earum veniam reprehenderit praesentium, quos ipsam ipsum accusamus obcaecati nam nesciunt non, voluptatum laudantium distinctio? Suscipit a labore consequatur exercitationem omnis ut, repellat, minus ex sed necessitatibus, corrupti magnam. Cupiditate ab ipsa, voluptas nulla, saepe quod doloremque molestias dolor placeat impedit nostrum facilis quam quasi mollitia vitae necessitatibus asperiores distinctio commodi? Unde blanditiis qui totam facere enim magnam ut nostrum porro consectetur cum a nulla, dolore minima voluptates, odit distinctio repudiandae aperiam excepturi, tempora sint eius et reiciendis. Earum saepe, libero commodi sequi mollitia aliquam ipsum inventore maiores dicta vel enim consequatur assumenda harum molestiae odio. Officiis nisi reiciendis perspiciatis provident veritatis pariatur sapiente incidunt est debitis porro quod quasi culpa, modi, dolor optio possimus mollitia repellat vitae. Vel reiciendis ipsum ipsam adipisci repellat illum nostrum ad veritatis maiores eum cumque quam facere eaque ea consequatur qui perspiciatis, obcaecati corporis cum commodi pariatur beatae repellendus voluptatibus! Iusto excepturi totam libero voluptate rerum quaerat recusandae fuga assumenda doloremque officia praesentium error inventore, pariatur suscipit sint, blanditiis accusamus. Provident quam suscipit placeat blanditiis quis magnam aliquam excepturi distinctio culpa eveniet odio assumenda in, porro eum laborum error sunt, iste aliquid ex quia officia temporibus sapiente ut. Iste, molestias? Eos, tempore corrupti, nulla assumenda illum consectetur ratione deserunt necessitatibus ad, odio eligendi. Veniam dignissimos fuga eligendi accusamus tempore fugiat dolor natus temporibus! Repellendus enim modi corporis tenetur ex ipsum quae quaerat. Dolorum dicta neque exercitationem inventore aspernatur vel totam placeat et, voluptates laboriosam quos ipsa iure sit pariatur! Quasi necessitatibus mollitia libero facilis tenetur ducimus illum commodi placeat ratione repellendus ad laboriosam, perferendis rem maxime quo eaque recusandae accusantium!
+</div>
     <script>
         // $(".toggleMenu").click(function(){
             
@@ -96,17 +204,45 @@
             //     }                
 
             // };
-            var tG = document.getElementsByClassName("toggleMenu")[0];
-            function toggle(){
-            const toggle = tG.getAttribute("class");
-               if(toggle == "toggleMenu"){
-                 tG.classList.add("change");
-                }else{
-                tG.classList.remove("change");
-              }   
-        }
+        //     var tG = document.getElementsByClassName("toggleMenu")[0];
+        //     function toggle(){
+        //     const toggle = tG.getAttribute("class");
+        //        if(toggle == "toggleMenu"){
+        //          tG.classList.add("change");
+        //         }else{
+        //         tG.classList.remove("change");
+        //       }   
+        // }
+        $(".toggleMenu").click(function(){
+            
+                 const toggle = $(".toggleMenu").attr("class"); 
+                 
+                 if(toggle == "toggleMenu"){
+    
+                 $(".toggleMenu").addClass("change");
+                 //$("#myTopMenu").css("left","0");
+                 $("#myTopMenu").stop().animate({top:0});
+                 
+                 }else{
+                     
+                 $(".toggleMenu").removeClass("change");
+                // $("#myTopMenu").css("left","-100%")
+                $("#myTopMenu").stop().animate({top:"-100%"});
+                 }
+            });
+    
+        $(window) .resize(function(){
+            $("#myTopMenu").removeAttr("style");
+            $(".toggleMenu").removeClass("change");
+        })
 
 
+        // document.querySelectorAll(".toggleMenu")[0].addEventListener("click",function(){
+        //     const toggle = document.querySelectorAll(".toggleMenu").getAtrribute("class");
+        //     if(toggle == "toggleMenu"){
+        //         document.querySelectorAll(".")
+        //     }
+        // });
     </script>
 
 

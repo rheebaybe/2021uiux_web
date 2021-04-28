@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn{
+            background: skyblue;
+            width: 300px;
+            text-align: center;
+            line-height: 40px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            border-radius: 10px;;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="window.open('http://www.naver.com','naver','width=500,height=500')">네이버</button>
+    <!-- onclick 안에 "" 안에는 자바만 들어갈수있다 -->
+    <div onclick="winOpen()" class="btn">다음창열기</div>
+    <div onclick="closeWin()" class="btn">닫기</div>
+    <div class="btn" onclick="uwinOpen()">영상보기</div>
+    <script>
+        let myWin;
+        function winOpen(){
+            myWin = window.open("http://daum.net","daume","width=500,height=500")
+        }
+        function closeWin(){
+            myWin.close();
+        }
+        function uwinOpen(){
+            window.open("youtube.html","youtube","width=500,height=400")
+        }
+    </script>
+</body>
+</html>
