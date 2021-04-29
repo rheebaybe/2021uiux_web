@@ -18,7 +18,9 @@
             padding: 10px;
         }
         .nav{
-            
+            height: 80px;
+            background: orange;
+            transition:.3s;
         }
         .nav li{
             float: left;
@@ -33,27 +35,101 @@
         }
         .nav.fixed{
             position: fixed;
-            width:100%;                                                                                                                                                                     top: 0;                                                         
+            width:100%;                                                                                  height: 40px;                                                        
+        }
+        #car1{
+            position: absolute;
+            left: 0;
+            top: 1300px;
+            transition:.3s;
+            opacity: 0;
+        }
+        #car1.move{
+            top: 1000px;
+            left: 300px;
+            opacity: 1;
+        }
+        #car2{
+            position: absolute;
+            right: 0;
+            top: 1500px;
+            transition:.3s;
+            opacity: 0;
+        }
+        #car2.move{
+            right: 300px;
+            opacity: 1;
+        }
+        .top{
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            background: gray;
+            right: 50px;
+            bottom: 50px;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: viewTop 1s infinite alternate;
+            cursor: pointer;
+            opacity: 0;
+            transition:.3s;
+        }
+        .top.view{
+            opacity: 1;
+        }
+        @keyframes viewTop{
+            to{
+                transform:translateY(-20px);
+            }
         }
     </style>
     <script>
         $(document).ready(function(){      
             // $(window).on("scroll",function(){}); 축약형
             //  let scrollY = window.pageYOffset;
+            // 페이지의 위쪽 넘쳐져있는 부분
             const menuPos = $(".nav").offset().top;
+            const car1Pos = $("#car1").offset().top;
+            const car2Pos = $("#car2").offset().top;
+            const topPos = $(".top").offset().top;
+
             $(".menuPos").html(menuPos + "px");
+            // menupos값
 
             $(window).scroll(function(){
                 let scrollY = $(window).scrollTop();
+                // 네비게이션 top값 구할때
                 console.log(scrollY);
                 $(".scrollY").html(scrollY + "px");
                 
                 if(menuPos<scrollY){
+                    // menupos=고정값
+                    // scrollY값은 증가값
                     $(".nav").addClass("fixed");
                 }else{
                     $(".nav").removeClass("fixed");
                 }
-        
+                if(car1Pos < scrollY + 300){
+                     // scrollY값이 1000이 됐을때 나온다
+                     $("#car1").addClass("move");
+                }else{
+                     $("#car1").removeClass("move");
+                 }
+                if(car2Pos < scrollY + 500){
+                    $("#car2").addClass("move");
+                }else{
+                    $("#car2").removeClass("move");
+                }
+                if(topPos < scrollY + window.innerHeight/2){
+                    $(".top").addClass("view");
+                }else{
+                    $(".top").removeClass("view");
+                }
+            }); //scrioll 관련
+            $(".top").click(function(){
+                $("html,body").animate({scrollTop:0},1000);
             });
         });
     </script>
@@ -131,11 +207,13 @@
     <p>57</p>
     <p>58</p>
     <p>59</p>
+    <img src="../../images/car.png" alt="" id="car1">
     <p>60</p>
     <p>61</p>
     <p>62</p>
     <p>63</p>
     <p>64</p>
+    <img src="../../images/car.png" alt="" id="car2">
     <p>65</p>
     <p>66</p>
     <p>67</p>
@@ -172,7 +250,7 @@
     <p>98</p>
     <p>99</p>
     <p>100</p>
-
+<div class="top">top</div>
 
 
 

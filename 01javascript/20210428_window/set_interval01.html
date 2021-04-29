@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>time</title>
+</head>
+<body>
+    <p id="time"></p>
+    <button onclick="eTime()">멈추기</button>
+    <button onclick="sTime()">다시시작</button>
+    <script>
+        const time = document.getElementById("time"); //$("#time")
+        // let date = new Date();
+        // 객체를 가져올때는 new를 붙인다
+        // let timeView = date.toLocaleTimeString();
+        // console.log(timeView);
+        // time.innerHTML = timeView
+
+        // setInterval("함수",1000)
+        // setInterval("timer()",1000);
+
+        let myTime = 0;
+
+        function sTime(){
+            if(myTime == 0){
+            myTime = setInterval("timer()",1000);
+            }
+            console.log(myTime)
+        }
+        function timer(){
+            let date = new Date();
+            let timeView = date.toLocaleTimeString();
+            time.innerHTML = timeView;
+            // time=dom값
+
+        }
+        timer();
+        sTime();
+        function eTime(){
+            clearInterval(myTime);
+            myTime = 0
+        }
+        
+    </script>
+</body>
+</html>
