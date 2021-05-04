@@ -67,10 +67,21 @@ $(".menu>a").click(function(){
 // });
 
 // let scrollY = $(window).scrollTop();
+$(window).scroll(function(){
 
-for(i=0; i<=2;.i++){
-    $(".scene").eq(i).scroll(function(){
-        $(".menu>a").removeClass("active").eq(i).addClass("active")
-    });
+// for(let i=0; i<(".scene").length;i++){
+//    if(scrollY>= $(".scene").eq(i).offset().top){
+//        $(".menu>a").removeClass("active").eq(i).addClass("active");
+//    }
+// }
+
+$(".scene").each(function(index){});
+// index=매개변수 다른 단어를 써도된다 작명가능
+// if(scrollY >= $(".scene").eq(index).offset().top){}
+// for each문으로 줄이기 전
+if(scrollY >= $(this).offset().top){
+    $(".menu>a").removeClass("active").eq(index).addClass("active");
 }
 
+
+});
