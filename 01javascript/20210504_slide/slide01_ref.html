@@ -4,10 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>slide</title>
+    <title>Document</title>
     <link rel="stylesheet" href="../../css/reset.css">
     <script src="../../js/jquery-3.1.1.min.js"></script>
-    <script src="js/script.js"></script>
+    <script>
+        $(document).ready(function(){
+   
+            let current = 0;
+            // 현재의 값
+            const banner = $(".wrapper li");
+
+            function slider(){
+                move(current,0,"-100%"); 
+                //0
+                current++;
+                if(current == 5) {current=0}
+                move(current,"100%",0); // 1
+            }
+
+            setInterval(slider,3000);
+
+            function move(i,start,end){
+                banner.eq(i).css({left:start}).stop().animate({left:end},1000);
+                // i=current
+            }
+
+
+    
+        });
+    </script>
     <style>
         .wrapper img{
             display: block;
@@ -16,23 +41,21 @@
         .wrapper{
             width: 500px;
             height: 200px;
-            margin: 0 auto;
-            background: oratnge;
+            margin: 0 atuo;
+            background: orange;
             overflow: hidden;
         }
-        .wrapper ul {
-            width: 500px;
-            height: 200px;
+        .wrapper ul{
             position: relative;
         }
         .wrapper li{
             position: absolute;
             left: 100%;
-            top: 0;
+            /* 오른쪽으로 간다 */
         }
         .wrapper li:nth-child(1){
             left: 0;
-            top: 0;
+            
         }
     </style>
 </head>
@@ -44,7 +67,6 @@
             <li><img src="../../images/images03.jpg" alt=""></li>
             <li><img src="../../images/images04.jpg" alt=""></li>
             <li><img src="../../images/images05.jpg" alt=""></li>
-            
         </ul>
     </div>
 </body>
