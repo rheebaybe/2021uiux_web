@@ -1,0 +1,215 @@
+@charset "UTF-8";
+/* reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a:link,a:visited{
+    color:#000;
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+.clearfix:after{
+    content:"";
+    display: block;
+    clear:both;
+}
+
+
+/* header */
+header{
+    display: flex;
+    justify-content:center;
+    /* 자식요소가 center */
+    height: 100px;
+   
+}
+.container{
+    width: 1000px;
+    /* flex-grow값을 width에 쓰는것 */
+    _background: skyblue;
+    display: flex;
+    justify-content: space-between;
+    /* 자식되는 logo와 menu가 양쪽으로 벌어짐 */
+}
+
+.logo{
+    
+    display: flex;
+    align-items: center;
+}
+.menu{
+    display: flex;
+    align-items: center;
+    
+}
+.menu ul{
+    display: flex;
+    /* 세로로 있던 li 메뉴가 가로로 펼쳐진다 */
+    
+}
+.menu ul a{
+    display:block;
+    padding:15px;
+}
+.menu ul a:hover{
+    background: orange;
+    color:#fff;
+}
+
+.mobile_menu{
+    display: none;
+    _background: skyblue;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+
+/* banner */
+
+#banner{
+    background-image: url(../images/banner/tony-stark-poster.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+}
+.banner_txt{
+_background: skyblue;
+display: flex;
+flex-direction: column;
+flex:1;
+/* 영역 전체가 잡힌다 
+부모자인 container가 flex 되어 있는 전제*/
+justify-content: center;
+align-items: flex-end;
+color:#fff;
+}
+
+.banner_txt h2{
+    font-size: 2.5rem;
+    width: 400px;
+    text-align: left;
+}
+.banner_txt p{
+    font-size: 1.3rem;
+    text-align: left;
+    width: 400px;
+}
+
+.column{
+    flex-direction: column;
+}
+
+
+.banner_option{
+    background: pink;
+    color:#fff;
+    display: flex;
+    padding:15px;
+    
+}
+.banner_option>div{
+    flex:1;
+    background: pink;
+    color:#fff;
+    padding:15px;
+}
+.banner_title{
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+
+.banner_option a{
+    color:#fff;
+    font-size: 1rem;
+}
+.banner_option a:hover{
+    border-bottom: 1px solid #fff;
+}
+
+
+
+/* general */
+
+#general{
+    display: flex;
+    justify-content: center;
+    
+}
+#general section{
+    flex:2;
+    background: skyblue;
+}
+#general aside{
+    flex:1;
+    background: yellow;
+}
+
+
+
+
+
+@media screen and (max-width:700px) {
+    header{
+        height: 60px;
+    }
+    .logo{
+        padding-left: 16px;
+    }
+    .logo img{
+        width: 100px;
+    }
+    .menu{
+        padding-right: 16px;
+    }
+    .menu ul{
+        display: none;
+    }
+    .mobile_menu{
+        display: flex;
+        /* display: block대신 사용 가능 */
+        flex-direction: column;
+        justify-content: space-around;
+        /* 축이 바꼈기때문에 사용 */
+    }
+    .mobile_menu_line{
+        height: 4px;
+        background: #000;
+        border-radius: 2px;
+    }
+    .banner_txt{
+        align-items: center;
+        
+    }
+    .banner_option{
+        flex-direction: column;
+    }
+    .banner_option a{
+        display: none;
+    }
+    .banner_option>div{
+        padding:20px;
+        padding-bottom: 0;
+    }
+    .banner_option>div:last-child{
+        padding-bottom: 20px;
+    }
+
+
+    #container{
+        flex-direction: column;
+    }
+
+
+
+
+
+}
