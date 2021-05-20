@@ -17,8 +17,8 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 
 <!-- 상단 시작 { -->
 <div id="hd">
-
-    <h1 id="hd_h1"><?php echo $g5['title'] ?></h1>
+    <h1 id="hd_h1"><?php echo $g5['title'] ?></h1> 
+    <!-- 사이트제목 -->
     <div id="skip_to_container"><a href="#container">본문 바로가기</a></div>
 
     <?php
@@ -26,58 +26,36 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
         include G5_BBS_PATH.'/newwin.inc.php'; // 팝업레이어
     }
     ?>
-<!--
-    <div id="hd_wrapper">
 
+    <div id="hd_wrapper">
+    <?php echo G5_URL ?>
         <div id="logo">
-            <a href="<?php echo G5_URL ?>"><img src="<?php echo G5_IMG_URL ?>/logo.png" alt="<?php echo $config['cf_title']; ?>"></a>
+            <a href="<?php echo G5_URL ?>"><img src="<?php echo G5_THEME_IMG_URL ?>/logo.png" alt="<?php echo $config['cf_title']; ?>"></a>
+            <!-- G5 그누보드 THEME 폴더 안에 IMG폴더 -->
         </div>
 
 
-    </div> -->
+        <ul class="hd_login">
+            <?php if ($is_member) {  ?>
+                <li><a href="<?php echo G5_BBS_URL ?>/member_confirm.php?url=<?php echo G5_BBS_URL ?>/register_form.php">정보수정</a></li>
+                <li><a href="<?php echo G5_BBS_URL ?>/logout.php">로그아웃</a></li>
+                <?php if ($is_admin) {  ?>
+                  <li class="tnb_admin"><a href="<?php echo correct_goto_url(G5_ADMIN_URL); ?>">관리자</a></li>
+                <?php }  ?>
+            <?php } else {  ?>
+                <li><a href="<?php echo G5_BBS_URL ?>/register.php">회원가입</a></li>
+                <li><a href="<?php echo G5_BBS_URL ?>/login.php">로그인</a></li>
+            <?php }  ?>
+
+        </ul>
+    </div>
 
     <nav id="gnb">
         <h2>메인메뉴</h2>
         <div class="gnb_wrap">
-          <header>
-        <div class="nav clearfix">
-            <h1 class="stand"><a href="<?php echo G5_URL ?>"><img src="<?php echo G5_IMG_URL ?>/logo.png" alt="<?php echo $config['cf_title']; ?>"></a></h1>
-            <h1 class="over"><a href="<?php echo G5_URL ?>"><img src="<?php echo G5_IMG_URL ?>/logo02.png" alt="<?php echo $config['cf_title']; ?>"></a></h1>
-
-            <ul class="mainmenu clearfix">
-
-                <li class="mHome gnb_1da"><a href="index.html"><img src="images/home.png" alt=""></a></li>
-                <li><a href="<?php echo $row['me_link']; ?>">회사소개</a>
-
-                </li>
-                <li><a href="<?php echo $row['me_link']; ?>">제품</a>
-
-                </li>
-                <li><a href="<?php echo $row['me_link']; ?>">투자정보</a>
-
-                </li>
-                <li><a href="<?php echo $row['me_link']; ?>">지속가능경영</a>
-
-                </li>
-                <li><a href="<?php echo $row['me_link']; ?>">인재경영</a>
-
-                </li>
-                <li><a href="<?php echo $row['me_link']; ?>">홍보센터</a>
-
-                </li>
-            </ul>
-        </div>
-        <h2 class="mlogo"><img src="images/mlogo.png" alt="동국제강"></h2>
-        <div class="toggleMenu">
-
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-        </div>
-    </header>
-<!--
             <ul id="gnb_1dul">
-                <li class="gnb_1dli gnb_mnal"><button type="button" class="gnb_menu_btn" title="전체메뉴"><i class="fa fa-bars" aria-hidden="true"></i><span class="sound_only">전체메뉴열기</span></button></li>
+                <!-- <li class="gnb_1dli gnb_mnal"><button type="button" class="gnb_menu_btn" title="전체메뉴"><i class="fa fa-bars" aria-hidden="true"></i><span class="sound_only">전체메뉴열기</span></button></li> 햄버거버튼-->
+                <!-- 1d=1depth mainmenu -->
                 <?php
 				$menu_datas = get_menu_db(0, true);
 				$gnb_zindex = 999; // gnb_1dli z-index 값 설정용
@@ -104,7 +82,8 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 
                     if($k > 0)
                         echo '</ul></div>'.PHP_EOL;
-                    ?>
+                    ?> 
+                    <!-- 서브메뉴 -->
                 </li>
                 <?php
                 $i++;
@@ -113,8 +92,8 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                 if ($i == 0) {  ?>
                     <li class="gnb_empty">메뉴 준비 중입니다.<?php if ($is_admin) { ?> <a href="<?php echo G5_ADMIN_URL; ?>/menu_list.php">관리자모드 &gt; 환경설정 &gt; 메뉴설정</a>에서 설정하실 수 있습니다.<?php } ?></li>
                 <?php } ?>
-            </ul> -->
-            <div id="gnb_all">
+            </ul>
+            <!-- <div id="gnb_all">
                 <h2>전체메뉴</h2>
                 <ul class="gnb_al_ul">
                     <?php
@@ -150,9 +129,9 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                 <button type="button" class="gnb_close_btn"><i class="fa fa-times" aria-hidden="true"></i></button>
             </div>
             <div id="gnb_all_bg"></div>
-        </div>
+        </div> 햄버거버튼을 뺐으니까 필요없어진다-->
     </nav>
-    <script>
+    <!-- <script>
 
     $(function(){
         $(".gnb_menu_btn").click(function(){
@@ -163,7 +142,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
         });
     });
 
-    </script>
+    </script> 햄버거버튼을 뺐으니까 필요없어진다-->
 </div>
 <!-- } 상단 끝 -->
 
@@ -171,53 +150,38 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 <hr>
 
 <? if(defined('_INDEX_')){?>
+  <img src="<? echo G5_THEME_IMG_URL?>/pc01.jpg" alt="">
+<?}?>
 
+<? if(!defined('_INDEX_')){?>
 
-  <div class="sliderWrap" style="position:relative">
-    <ul class="slider">
-
-        <li><img src="img/slide02.png" alt="">
-
-            <video id="myVideo" autoplay muted loop>
-                <source src="video/MAIN_01.mp4" type="video/mp4">
-                <p>이 브라우저는 비디오 태그를 지원하지 않습니다.</p>
-            </video>
-
-            <div class="textWrap">
-                <p>동국제강은 지구를 탄생시킨<br>
-                    철의 에너지를 미래를 여는<br>
-                    순환 에너지로 바꿔갑니다</p>
-            </div>
-
-        </li>
-
-        <li><img src="img/slide02.png" alt="">
-            <div class="textWrap">
-                <p>동국제강은 철의 본질에<br>
-                    색과 온도를 더해<br>
-                    인간문화 발전에 기여합니다</p>
-            </div>
-        </li>
-        <li><img src="img/slide03.png" alt="">
-            <div class="textWrap">
-                <p>동국제강은<br>
-                    철강제품의 혁신을 통해<br>
-                    우리 삶의 중심을 만듭니다</p>
-            </div>
-        </li>
-    </ul>
+<div class="subvisual">
+    <div class="subImg" id="page_title">
+        <div class="title">
+        <h2 class="loc1D"></h2>
+        <div class="txt">안녕하세요</div>
+        </div>
+    </div>
+    <script>
+        window.onload = function(){
+            const menuDep = $(".loc1D").html(""); //get
+            console.log("현재위치" + menuDep);
+            if(i=0 menuDep>2){
+                $(".loc1D").html("저희 홈페이지를 찾아주셔서 감사합니다.");
+            }else(i == 2){
+                $(".loc1D").html("자유롭게 커뮤니티하실수 있는 곳입니다");
+            }
+        };
+        
+    </script>
+   
 </div>
-<script>
-
-  $(document).ready(function(){
-    var mySlider = $('.slider').bxSlider({
-    auto:false,
-    pager:false,
-    controls:false
-  });
-</script>
 
 <?}?>
+
+
+
+
 
 <!-- 콘텐츠 시작 { -->
 <div id="wrapper">

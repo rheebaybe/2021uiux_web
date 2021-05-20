@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       html,body{
+           height: 100%;
+       }
+        .container{
+            display: flex;
+            background: red;
+            /* height: 50vh; */
+            height: 100%;
+            /* 쓰러면 html,body에 100%를 줘야한다 */
+            
+        }
+        .container div{
+            _flex: 1;
+            /* 원래 값은 1grow 1shrink auto
+            1/n로 배분된다 */
+            _flex-grow: 1;
+            /* 글자외의 남겨진 영역을 1/n로 한다  */
+            flex-basis: calc( 100% / 3 );
+            /* 방향축이 바뀌면 높이값으로 바뀐다 */
+        }
+        .container div:nth-child(1){
+            background: skyblue;
+            /* width: calc(100% / 3); */
+        }
+        .container div:nth-child(2){
+            background: orange;
+            /* width: calc(100% / 3); */
+            _flex:2;
+        }
+        .container div:nth-child(3){
+            background: yellow;
+            /* width: calc(100% / 3); */
+        }
+        
+        @media screen and (max-width:700px){
+            .container{
+                flex-direction: column;
+                
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">1Lorem, ipsum.</div>
+        <div class="item">2Lorem</div>
+        <div class="item">3Lorem, ipsum.</div>
+        
+    </div>
+</body>
+</html>

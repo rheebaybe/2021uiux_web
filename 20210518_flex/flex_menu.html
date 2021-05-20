@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .menu{
+            display:flex;
+            /* 왼쪽으로 붙는다 */
+            height: 100vh;
+        }
+        .menu-item{
+            
+            background: gold;
+            transition: .3s;
+            /* width: 25%; */
+            flex:1;
+        }
+        .menu-item:hover{
+            background: skyblue;
+            /* width: 30%; */
+            flex:1.5;
+        }
+        .menu-item a{
+            display: flex;
+            /* display: block; */
+            /* line-height: 40px; */
+            /* text-align: center; */
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media screen and (max-width:700px){
+            .menu{
+                flex-direction: column;
+                
+            }
+            .menu-item a{
+                height: 25vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <div class="menu-item"><a href="#">MENU1</a></div>
+        <div class="menu-item"><a href="#">MENU2</a></div>
+        <div class="menu-item"><a href="#">MENU3</a></div>
+        <div class="menu-item"><a href="#">MENU4</a></div>
+    </div>
+</body>
+</html>
