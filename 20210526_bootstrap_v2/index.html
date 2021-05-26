@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOMEPAGE</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/all.min.css">
+  <!--폰트어썸-->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <script src="js/jquery.3.4.1.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
+  <script src="js/isotope.pkgd.min.js"></script>
+  <style>
+    :root {
+      --primary-color-1: #4458cc;
+      --primary-color-2: #854fee;
+      --bgcolor1: #efefef;
+      --bgcolor2: #f0f0f0;
+      --gradient-color-1: linear-gradient(90deg, #4458cc, #854fee);
+      --shadow-color: 0 10px 30px rgba(118, 85, 225, 0.3);
+      --box-shadow: 0 10px 20px rgba(57, 56, 61, 0.3);
+    }
+
+    .visualWrap {
+      background: url(assets/slider-bg.svg) no-repeat center;
+      background-size: cover;
+    }
+
+    .button.primary-button {
+      box-shadow: var(--box-shadow);
+      background: var(--gradient-color-1);
+      color: White;
+    }
+
+    .button.secondary-button {
+      box-shadow: var(--box-shadow);
+    }
+
+    .visualWrap2 {
+      background: var(-bgcolor1);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="headerWrap">
+    <div class="container ">
+      <nav class="navbar navbar-expand-md navbar-light">
+        <a class="navbar-brand" href="#">
+          <img src="assets/logo.svg" alt="" class="img-fluid">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">COMPANY</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">PRODUCT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">COMMUNITY</a>
+            </li>
+
+          </ul>
+
+        </div>
+      </nav>
+    </div>
+  </div>
+  <!--headerWrap end-->
+  <!-- visualWrap start -->
+  <div class="visualWrap">
+    <div class="container px-md-0 py-5">
+      <div class="row">
+        <!--flex되어져있다-->
+        <div class="col-md-6 align-self-center text-center text-md-left  order-2 order-md-1">
+          <!--자신을 가운데 두는거-->
+          <h2>Lorem ipsum dolor sit.</h2>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime, sequi.</p>
+          <a href="#!" class="btn button primary-button px-4">MORE</a>
+          <a href="#!" class="btn button secondary-button btn-outline-primary px-4">EMAIL</a>
+        </div>
+        <div class="col-md-6 order-1 mb-5 mb-md-0 order-md-2">
+          <img src="assets/slider.svg" alt="" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- visualWrap end -->
+  <div class="visualWrap2">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-md-6 order-2 order-md-1">
+          <img src="assets/sobre.svg" alt="img-fluid">
+        </div>
+        <div class="col-md-6 align-self-center text-center text-md-left order-1 mb-5 mb-md-0 order-md-2">
+          <h2>Lorem ipsum dolor sit amet.</h2>
+          <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, quis!</h4>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla voluptatem cumque est facere assumenda, sit
+            ipsa aut fugiat distinctio, aspernatur alias sapiente dignissimos sint earum reiciendis vero. Nulla, dolores
+            assumenda?</p>
+          <a href="#!" class="btn button primary-button secondary-button d-block d-md-inline">ENTER CONTACT</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- content end -->
+  <style>
+    .service h2.title:after,
+    .portfolio h2.title:after {
+      content: "";
+      display: block;
+      width: 200px;
+      height: 2px;
+      background: var(--primary-color-1);
+      margin: 10px auto;
+    }
+
+    .service .card img {
+      height: 200px;
+    }
+
+    .service .card {
+      background: var(--bgcolor2);
+      border: 0 none;
+      transition: .3s;
+    }
+
+    .service .card:hover {
+      transform: scale(1.1);
+      box-shadow: var(--box-shadow);
+    }
+  </style>
+  <!-- service start -->
+  <div class="service">
+    <div class="container py-5">
+      <h2 class="title text-center">SERVICE</h2>
+      <p class="text-center mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, neque?</p>
+      <div class="row">
+        <div class="col-md-6 col-lg-3 text-center mb-5 mb-lg-0">
+          <div class="card p-3">
+            <!--flex포함됨-->
+            <img src="assets/destaque1.svg" alt="" class="img-fluid m-3">
+            <div class="card-body">
+              <h4 class="card-title">Lorem, ipsum.</h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, a.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 text-center mb-5  mb-lg-0">
+          <div class="card p-3">
+            <!--flex포함됨-->
+            <img src="assets/destaque2.svg" alt="" class="img-fluid m-3">
+            <div class="card-body">
+              <h4 class="card-title">Lorem, ipsum.</h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, a.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 text-center mb-5  mb-lg-0">
+          <div class="card p-3">
+            <!--flex포함됨-->
+            <img src="assets/destaque3.svg" alt="" class="img-fluid m-3">
+            <div class="card-body">
+              <h4 class="card-title">Lorem, ipsum.</h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, a.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 text-center">
+          <div class="card p-3">
+            <!--flex포함됨-->
+            <img src="assets/destaque4.svg" alt="" class="img-fluid m-3">
+            <div class="card-body">
+              <h4 class="card-title">Lorem, ipsum.</h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, a.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- service end -->
+<style>
+  .portfolio .btn-group button{
+    background: none;
+    border:0 none;
+    font-weight: bold;
+    outline:0;
+    font-size: 1.1rem;
+  }
+  .portfolio .btn-group button + button{
+    margin-left: 30px;
+  }
+  .portfolio .btn-group button.active{
+    color:var(--primary-color-1);
+  }
+  .portfolio .element-item img{
+    border-radius: 10px;
+    transition: .3s;
+  }
+  .portfolio .element-item img:hover{
+    box-shadow: var(--box-shadow);
+  }
+</style>
+
+  <!-- portfolio start -->
+  <div class="portfolio">
+    <div class="container">
+      <h2 class="title text-center">PORTFOLIO</h2>
+      <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, eos.</p>
+      <div class="btn-group mb-3">
+        <button data-filter="" class="active" id="btn">ALL</button> <!-- all로 필터가 필요없으니까 빈공란-->
+        <button data-filter=".web">WEBSITE</button>
+        <button data-filter=".photo">PHOTOSHOP</button>
+        <button data-filter=".illu">ILLUST</button>
+      </div>
+      <div class="row view">
+        <div class="col-6 col-lg-3 element-item web mb-3">
+          <img src="assets/servicos/1.jpg" alt="" class="img-fluid">
+        </div>
+        <div class="col-6 col-lg-3 element-item photo mb-3">
+          <img src="assets/servicos/2.jpg" alt="" class="img-fluid">
+        </div>
+        <div class="col-6 col-lg-3 element-item illu mb-3">
+          <img src="assets/servicos/3.jpg" alt="" class="img-fluid">
+        </div>
+        <div class="col-6 col-lg-3 element-item web mb-3">
+          <img src="assets/servicos/4.jpg" alt="" class="img-fluid">
+        </div>
+        <div class="col-6 col-lg-3 element-item photo mb-3">
+          <img src="assets/servicos/5.jpg" alt="" class="img-fluid">
+        </div>
+        <div class="col-6 col-lg-3 element-item illu mb-3">
+          <img src="assets/servicos/6.jpg" alt="" class="img-fluid">
+        </div>
+        <div class="col-6 col-lg-3 element-item illu mb-3">
+          <img src="assets/servicos/7.jpg" alt="" class="img-fluid">
+        </div>
+        <div class="col-6 col-lg-3 element-item illu mb-3">
+          <img src="assets/servicos/8.jpg" alt="" class="img-fluid">
+        </div>
+        <div class="col-6 col-lg-3 element-item illu mb-3">
+          <img src="assets/servicos/9.jpg" alt="" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- portfolio end -->
+
+  <div style="height: 1000px;"></div>
+  <script>
+
+    const btns = $(".portfolio .btn-group button");
+    btns.click(function () {
+      let i = $(this).index();
+      console.log(i);
+      btns.removeClass("active");
+      btns.eq(i).addClass("active");
+
+      let selector = btns.eq(i).attr("data-filter");
+      console.log(selector);
+
+      $(".portfolio .view").isotope({
+        filter: selector
+      })
+    });
+
+    window.onload = function(){
+      $(".portfolio .btn-group #btn").trigger("click")
+    }
+  </script>
+</body>
+
+</html>
