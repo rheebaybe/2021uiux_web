@@ -134,9 +134,14 @@
     font-size: 1.1rem;
     border-bottom: 4px solid var(--primary-color-1);
   }
+  .headerWrap{
+    transition:0.3s;
+  }
   .headerWrap.fixed-top{
     box-shadow: var(--box-shadow);
+    background: var(--bgcolor2);
   }
+
   @media screen and (max-width:756px){
     .headerWrap .nav-item{
       border-bottom: 0 none;
@@ -415,16 +420,20 @@
 
   <script>
 
+let navOffset = $(".headerWrap").height()+100;
 
-    let navOffset = $(".headerWrap").height()+100;
-    $(window).scroll(function(){
-      let scroll = $(window).scrollTop();
-      if(navOffest < scroll){
-        $(".headerWrap").addClass("fixed-top");
-      }else{
+  $(window).scroll(function(){
+    hScroll();
+  });
+  function hScroll(){
+    let scroll = $(window).scrollTop();
+    if(navOffset < scroll){
+      $(".headerWrap").addClass("fixed-top");
+    }else{
         $(".headerWrap").removeClass("fixed-top");
-      }
-    });
+    }
+  }
+  hScroll();
 
     const btns = $(".portfolio .btn-group button");
     btns.click(function () {
