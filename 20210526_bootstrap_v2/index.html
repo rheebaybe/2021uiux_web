@@ -10,12 +10,17 @@
   <link rel="stylesheet" href="css/all.min.css">
   <!--폰트어썸-->
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/owl/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl/owl.theme.default.min.css">
 
   <script src="js/jquery.3.4.1.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
     crossorigin="anonymous"></script>
   <script src="js/isotope.pkgd.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
   <style>
     :root {
       --primary-color-1: #4458cc;
@@ -45,11 +50,108 @@
     .visualWrap2 {
       background: var(-bgcolor1);
     }
+
+    .service h2.title:after,
+    .portfolio h2.title:after,
+    .customer h2.title:after {
+      content: "";
+      display: block;
+      width: 200px;
+      height: 2px;
+      background: var(--primary-color-1);
+      margin: 10px auto;
+    }
+
+    .service .card img {
+      height: 200px;
+    }
+
+    .service .card {
+      background: var(--bgcolor2);
+      border: 0 none;
+      transition: .3s;
+    }
+
+    .service .card:hover {
+      transform: scale(1.1);
+      box-shadow: var(--box-shadow);
+    }
+
+    .portfolio .btn-group button{
+    background: none;
+    border:0 none;
+    font-weight: bold;
+    outline:0;
+    font-size: 1.1rem;
+  }
+  .portfolio .btn-group button + button{
+    margin-left: 30px;
+  }
+  .portfolio .btn-group button.active{
+    color:var(--primary-color-1);
+  }
+  .portfolio .element-item img{
+    border-radius: 10px;
+    transition: .3s;
+  }
+  .portfolio .element-item img:hover{
+    box-shadow: var(--box-shadow);
+  }
+  .customer .sliderView{
+    padding:30px;
+    background: var(--bgcolor2);
+    border-radius: 5px;
+  }
+  .footer{
+    background: var(--bgcolor2);
+  }
+  .icon li + li{
+    margin-left: 25px;
+  }
+  .icon a{
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background: white;
+    text-align: center;
+    line-height: 50px;
+    transition:0.3s;
+  }
+  .icon a:hover{
+    box-shadow:var(--shadow-color);
+  }
+  .icon a img{
+    max-width: 20px;
+    
+  }
+  .headerWrap .nav-item{
+    font-size: 1.1rem;
+    border-bottom: 4px solid transparent;
+    transition:0.3s;
+  }
+  .headerWrap .nav-item:hover{
+    font-size: 1.1rem;
+    border-bottom: 4px solid var(--primary-color-1);
+  }
+  .headerWrap.fixed-top{
+    box-shadow: var(--box-shadow);
+  }
+  @media screen and (max-width:756px){
+    .headerWrap .nav-item{
+      border-bottom: 0 none;
+      padding-left: 20px;
+    }
+    .headerWrap .nav-item:hover{
+      border-bottom: 0 none;
+      background: var(--bgcolor2);
+    }
+  }
   </style>
 </head>
 
 <body>
-  <div class="headerWrap">
+  <div class="headerWrap bg-white">
     <div class="container ">
       <nav class="navbar navbar-expand-md navbar-light">
         <a class="navbar-brand" href="#">
@@ -119,32 +221,8 @@
     </div>
   </div>
   <!-- content end -->
-  <style>
-    .service h2.title:after,
-    .portfolio h2.title:after {
-      content: "";
-      display: block;
-      width: 200px;
-      height: 2px;
-      background: var(--primary-color-1);
-      margin: 10px auto;
-    }
 
-    .service .card img {
-      height: 200px;
-    }
 
-    .service .card {
-      background: var(--bgcolor2);
-      border: 0 none;
-      transition: .3s;
-    }
-
-    .service .card:hover {
-      transform: scale(1.1);
-      box-shadow: var(--box-shadow);
-    }
-  </style>
   <!-- service start -->
   <div class="service">
     <div class="container py-5">
@@ -196,31 +274,10 @@
     </div>
   </div>
   <!-- service end -->
-<style>
-  .portfolio .btn-group button{
-    background: none;
-    border:0 none;
-    font-weight: bold;
-    outline:0;
-    font-size: 1.1rem;
-  }
-  .portfolio .btn-group button + button{
-    margin-left: 30px;
-  }
-  .portfolio .btn-group button.active{
-    color:var(--primary-color-1);
-  }
-  .portfolio .element-item img{
-    border-radius: 10px;
-    transition: .3s;
-  }
-  .portfolio .element-item img:hover{
-    box-shadow: var(--box-shadow);
-  }
-</style>
+
 
   <!-- portfolio start -->
-  <div class="portfolio">
+  <div class="portfolio mb-5">
     <div class="container">
       <h2 class="title text-center">PORTFOLIO</h2>
       <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, eos.</p>
@@ -232,39 +289,142 @@
       </div>
       <div class="row view">
         <div class="col-6 col-lg-3 element-item web mb-3">
-          <img src="assets/servicos/1.jpg" alt="" class="img-fluid">
+          <a href="assets/servicos/1.jpg" class="popup_link"><img src="assets/servicos/1.jpg" alt="" class="img-fluid"></a>
         </div>
         <div class="col-6 col-lg-3 element-item photo mb-3">
-          <img src="assets/servicos/2.jpg" alt="" class="img-fluid">
+          <a href="assets/servicos/2.jpg" class="popup_link"><img src="assets/servicos/2.jpg" alt="" class="img-fluid"></a>
         </div>
         <div class="col-6 col-lg-3 element-item illu mb-3">
-          <img src="assets/servicos/3.jpg" alt="" class="img-fluid">
+          <a href="assets/servicos/3.jpg" class="popup_link"><img src="assets/servicos/3.jpg" alt="" class="img-fluid"></a>
         </div>
         <div class="col-6 col-lg-3 element-item web mb-3">
-          <img src="assets/servicos/4.jpg" alt="" class="img-fluid">
+          <a href="assets/servicos/4.jpg" class="popup_link"><img src="assets/servicos/4.jpg" alt="" class="img-fluid"></a>
         </div>
         <div class="col-6 col-lg-3 element-item photo mb-3">
-          <img src="assets/servicos/5.jpg" alt="" class="img-fluid">
+          <a href="assets/servicos/5.jpg" class="popup_link"><img src="assets/servicos/5.jpg" alt="" class="img-fluid"></a>
         </div>
         <div class="col-6 col-lg-3 element-item illu mb-3">
-          <img src="assets/servicos/6.jpg" alt="" class="img-fluid">
+          <a href="assets/servicos/6.jpg" class="popup_link"><img src="assets/servicos/6.jpg" alt="" class="img-fluid"></a>
         </div>
         <div class="col-6 col-lg-3 element-item illu mb-3">
-          <img src="assets/servicos/7.jpg" alt="" class="img-fluid">
+          <a href="assets/servicos/7.jpg" class="popup_link"><img src="assets/servicos/7.jpg" alt="" class="img-fluid"></a>
         </div>
         <div class="col-6 col-lg-3 element-item illu mb-3">
-          <img src="assets/servicos/8.jpg" alt="" class="img-fluid">
+          <a href="assets/servicos/8.jpg" class="popup_link"><img src="assets/servicos/8.jpg" alt="" class="img-fluid"></a>
         </div>
         <div class="col-6 col-lg-3 element-item illu mb-3">
-          <img src="assets/servicos/9.jpg" alt="" class="img-fluid">
+          <a href="assets/servicos/9.jpg" class="popup_link"><img src="assets/servicos/9.jpg" alt="" class="img-fluid"></a>
         </div>
       </div>
     </div>
   </div>
   <!-- portfolio end -->
 
-  <div style="height: 1000px;"></div>
+
+  <!-- customer start -->
+  <div class="customer mb-5">
+    <div class="container">
+      <h2 class="title text-center">CUSTOMER</h2>
+      <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, eos.</p>
+      <div class="owl-carousel owl-theme owl-loaded">
+        <!-- #1 -->
+        <div>
+          <div class="sliderView d-flex">
+            <img src="assets/user.svg" alt="" class="img-fluid" style="max-width:150px">
+            <!-- img-fluid : 꽉차게 하는 기능  -->
+            <div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, minus?</p>
+              <p>
+                <img src="assets/quote.svg" alt="" class="d-block ml-auto" style="max-width:30px">
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- #1 -->
+        <!-- #2 -->
+        <div>
+          <div class="sliderView d-flex">
+            <img src="assets/user.svg" alt="" class="img-fluid" style="max-width:150px">
+            <!-- img-fluid : 꽉차게 하는 기능  -->
+            <div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, minus?</p>
+              <p>
+                <img src="assets/quote.svg" alt="" class="d-block ml-auto" style="max-width:30px">
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- #2 -->
+        <!-- #3 -->
+        <div>
+          <div class="sliderView d-flex">
+            <img src="assets/user.svg" alt="" class="img-fluid" style="max-width:150px">
+            <!-- img-fluid : 꽉차게 하는 기능  -->
+            <div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, minus?</p>
+              <p>
+                <img src="assets/quote.svg" alt="" class="d-block ml-auto" style="max-width:30px">
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- #3 -->
+        <!-- #4 -->
+        <div>
+          <div class="sliderView d-flex">
+            <img src="assets/user.svg" alt="" class="img-fluid" style="max-width:150px">
+            <!-- img-fluid : 꽉차게 하는 기능  -->
+            <div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, minus?</p>
+              <p>
+                <img src="assets/quote.svg" alt="" class="d-block ml-auto" style="max-width:30px">
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- #4 -->
+      </div>
+    </div>
+  </div>
+
+<!-- customer end -->
+
+<!-- footer start -->
+<div class="footer py-5">
+  <div class="container pb-5">
+    <div class="row">
+      <div class="col-md-6 text-center text-md-left mb-4 mb-md-0"><img src="assets/logo.svg" alt="" class="img-fluid"></div>
+      <!-- 중앙정렬 다른 방법 display:block margin:0 auto
+      display:flex justify-contents -->
+      <div class="col-md-6">
+        <ul class="icon d-flex justify-content-center justify-content-md-end">
+          <li><a href="#!"><img src="assets/facebook.svg" alt=""></a></li>
+          <li><a href="#!"><img src="assets/twitter.svg" alt=""></a></li>
+          <li><a href="#!"><img src="assets/instagram.svg" alt=""></a></li>
+          <li><a href="#!"><img src="assets/linkedin.svg" alt=""></a></li>
+          <li><a href="#!"><img src="assets/youtube.svg" alt=""></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- footer end -->
+
+
+
+
   <script>
+
+
+    let navOffset = $(".headerWrap").height()+100;
+    $(window).scroll(function(){
+      let scroll = $(window).scrollTop();
+      if(navOffest < scroll){
+        $(".headerWrap").addClass("fixed-top");
+      }else{
+        $(".headerWrap").removeClass("fixed-top");
+      }
+    });
 
     const btns = $(".portfolio .btn-group button");
     btns.click(function () {
@@ -284,6 +444,18 @@
     window.onload = function(){
       $(".portfolio .btn-group #btn").trigger("click")
     }
+    $(".view .popup_link").magnificPopup({type:"image"});
+
+    $(".customer .owl-carousel").owlCarousel({
+      loop:false,
+      margin:30,
+      autoplay:true,
+      responsive:{
+        0:{items:1},
+        600:{items:1},
+        1000:{items:2}
+      }
+    });
   </script>
 </body>
 
