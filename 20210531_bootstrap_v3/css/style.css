@@ -15,6 +15,7 @@
     background: linear-gradient(160deg,#02ccba,#aa7ecd);
     transform: skew(0deg,-15deg);
     top: -280px;
+    z-index: -999;
 }
 
 #headerWrap .video video{
@@ -55,7 +56,7 @@
     overflow: hidden;
     position: relative;
 }
-.banner .row > div:nth-child(1) .mask,
+/* .banner .row > div:nth-child(1) .mask,
 .banner .row > div:nth-child(4) .mask{
     background-color: rgba(2,179,228,0.5);
 }
@@ -66,11 +67,86 @@
 .banner .row > div:nth-child(3) .mask,
 .banner .row > div:nth-child(6) .mask{
     background-color: rgba(169,81,237,0.5);
-}
+} */
 
 .banner .row .card{
     box-shadow: 10px 10px 20px rgba(46,61,73,0.3);
     border:0 none;
     border-radius: 5px !important;
     overflow: hidden;
+}
+
+
+
+
+
+
+.adven .adven-title{
+    color:var(--primary-color);
+}
+
+.adven .icon{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 10px 10px 25px rgba(46,61,73,0.3);
+}
+
+.adven .title-1st{
+    color:var(--primary-color);
+}
+
+.adven .img-view{
+    height: 400px;
+}
+.adven .img-view img{
+    position: absolute;
+    box-shadow: 10px 10px 25px rgba(46,61,73,0.3);
+}
+.adven .img-view .img-1st{
+    max-width: 400px;
+    right: 1.25rem;
+    top: 1.25rem;
+}
+.adven .img-view .img-2st{
+    max-width: 300px;
+    left: 1.25rem;
+    bottom: 0;
+}
+
+
+
+.adven .title-2{
+    color:var(--secondary-color);
+}
+.adven .img-view2{
+    height: 400px;
+}
+.adven .img-view2 img{
+    position: absolute;
+    box-shadow: 10px 10px 25px rgba(46,61,73,0.3);
+}
+.adven .img-view2 .img-1st{
+    max-width: 400px;
+    left: 0;
+    top: 1.25rem;
+}
+.adven .img-view2 .img-2st{
+    max-width: 300px;
+    bottom: 0;
+    right: 1.25rem;
+}
+
+
+.adven .title-3{
+    color:var(--third-color);
+}
+
+
+
+
+
+.contact{
+    background: url(../images/contact-cover.jpg) no-repeat center;
+    background-size: cover;
 }
