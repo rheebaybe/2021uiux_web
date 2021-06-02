@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG</title>
+    <style>
+        /* svg{
+            background: skyblue;
+            stroke:#000;
+            stroke-width: 4;
+            fill:#fff;
+        } */
+        .box{
+            width: 200px;
+            height: 200px;
+        }
+        .box1{
+            width: 400px;
+            height: 400px;
+            background: url(star.svg);
+            background-color: skyblue;
+        }
+        .box2{
+            width: 400px;
+            height: 400px;
+            border: 1px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .st0{fill:#fff;stroke:#00f;
+        stroke-width:5;       
+        stroke-dasharray:625 ;
+        stroke-dashoffset:625;
+        stroke-linecap: round;
+        }
+
+        @keyframes starAni{
+            from{
+                stroke-dashoffset: 625;
+            }
+            to{
+                stroke-dashoffset: 0;
+            }
+        }
+        .box2 .st0:hover{
+            animation:starAni 2s infinite alternate;
+        }
+         
+    </style>
+</head>
+<body>
+    <svg width="100" height="100">
+        <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow"></circle>
+        <!-- cx circle x값 cy circle y값 r=지름 -->
+    </svg>
+
+    <img src="star.svg" alt="">
+
+    <div class="box">
+        <img src="star.svg" alt="">
+    </div>
+    
+    <div class="box1">
+
+    </div>
+
+    <div class="box2">
+        <svg width="200" height="200">
+            <!-- width height viewbox 등이 없으면 자기 값이 없어서 잘림 -->
+            
+            <polyline class="st0" points="105.3,35.1 118.1,74.7 181.7,78.4 131.1,115 150.3,174.4 99.9,137.6 49.3,174.2 68.7,114.9 18.3,78.1
+   80.7,78.2 100.1,18.9 105.3,35.1 "/>
+        </svg>
+        
+    </div>
+    
+</body>
+</html>
