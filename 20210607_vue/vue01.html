@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+       <ul class="list">
+           <!-- <li v-for="작명 in product">{{작명}}</li> -->
+           <li v-for="(작명,i) in product">
+               <img v-bind:src="`./images/${img[i]}`" alt="">
+               <div>{{product[i]}}<br>{{ price[i].toLocaleString() }} 원</div>
+            </li>
+            <!-- src=attribute값이라서 bind해서 값을 넣어야한다 -->
+       </ul>
+    </div>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                message:'hello vue!!',
+                product:['로드','하이브리드','유아용','기타'],
+                img:['1715.jpg','1740.jpg','1750.jpg','2224.jpg'],
+                price:[100000,100000,100000]
+            }
+        });
+    </script>
+    <style>
+        *{margin: 0; padding:0;}
+        li{list-style: none;}
+        img{width: 100%;}
+        ul.list li{
+            display: flex;
+        }
+        ul.list li img{
+            width: 50%;
+        }
+        ul.list li div{
+            width: 50%;
+        }
+    </style>
+</body>
+</html>

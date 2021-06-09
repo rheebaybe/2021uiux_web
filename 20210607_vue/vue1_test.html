@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="title">NEW</div>
+        <ul class="list">
+            <li v-for="(a,i) in product">
+                <img :src="`./images/${pimg[i]}`" alt="">
+                <div><h3>{{product[i]}}</h3><br>{{ price[i].toLocaleString() }} 원</div>
+            </li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                product:['2021 캐논데일 탑스톤 카본 2 그래블 바이크','예거 메티 G5 그래블 바이크(APEX1)','2021 메리다 리액토 디스크 5000 로드 자전거','2021 자이언트 리브 인챈트 20 라이트 어린이 자전거'],
+                pimg:['1750.jpg','2224.jpg','1740.jpg','1715.jpg'],
+                price:[5200000,1090000,3400000,240000],
+            }
+        });
+    </script>
+    <style>
+        *{margin: 0;padding: 0;}
+        li{list-style: none;}
+        img{ width: 100%;}
+        ul.list{
+            padding:50px;
+        }
+        ul.list li{   
+            width: 100%;        
+            display: flex;
+            border: 1px solid #eee;
+            padding:10px;
+            margin-bottom: 10px;
+        }
+        ul.list li img{
+            width:30%;
+        }
+    </style>
+</body>
+</html>
