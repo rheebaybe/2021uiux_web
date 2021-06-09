@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,40 +7,34 @@
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
-
 <body>
     <div id="app">
-        <div class="black-bg" v-if="view == true">
+        <div class="black-bg">
             <div class="white-bg">
-                <img v-bind:src="`./images/${pimg[current]}`" alt="">
+                <img v-bind:src="`./images/${img[0]}`" alt="">
                 <div class="txt">
-                    <h4>{{product[current]}}</h4>
-                    <p>{{price[current]}}원</p>
+                    <h3>{{product[0]}}</h3>
+                    <p>{{price[0]}}</p>
                 </div>
-                <button v-on:click="view = false">닫기</button>
             </div>
+            <ul class="list">
+                <li v-for="it in product">
+                    <img v-bind:src="`./images/${img[0]}`" alt="">
+                    <div class="txt">
+                        <h3>{{product[0]}}</h3>
+                        <p>{{price[0]}}</p>
+                    </div>
+                </li>
+            </ul>
         </div>
-       
-        <ul class="list">
-            <li v-for="(item,i) in product">
-                <img v-bind:src="`./images/${pimg[i]}`" alt="">
-                <div class="txt">
-                    <h3 v-on:click="view=true;current=i">{{product[i]}}</h3>
-                    <p>{{price[i]}}원</p>
-                </div>
-            </li>
-        </ul>
     </div>
     <script>
         new Vue({
-            el: '#app',
-            data: {
-                current:0,
-                view:false,                
-                pimg: ['1750.jpg', '2224.jpg', '1740.jpg', '1715.jpg'],
-                product: ['2021 캐논데일 탑스톤 카본 2 그래블 바이크', '예거 메티 G5 그래블 바이크(APEX1)', '2021 메리다 리액토 디스크 5000 로드 자전거', '2021 자이언트 리브 인챈트 20 라이트 어린이 자전거'],
-                price: [5200000, 1090000, 3400000, 240000],
-            }
+           el:'#app',
+            data: {img:['1750.jpg', '2224.jpg', '1740.jpg', '1715.jpg'],
+            product:['hi','hello','smile','bye'],
+            price:[100,1000,5000,10000],
+        }
         });
     </script>
     <style>
@@ -84,8 +77,6 @@
         .white-bg img{
             width: 100%;
         }
-      
     </style>
 </body>
-
 </html>
